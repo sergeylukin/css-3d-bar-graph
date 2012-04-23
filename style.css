@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  font: bold 16px sans-serif;
 }
 ul {
   list-style: none;
@@ -9,7 +9,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
 
 /** CONTAINER **/
 #graphcontainer {
-  margin: 4em auto;
+  margin: 2em auto;
   position: relative;
   height: 430px;
   width: 262px;
@@ -117,16 +117,16 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   z-index: 2;
   position: absolute;
   width: 311px;
-  height: 0;
-  display: none; /* hide by default */
+  height: 143px;
   bottom: -49px;
   left: 0px;
   background-color: rgba(121, 204, 50, .7);
 }
 
-  #third:target #graphbar { display: block; height: 143px; }
-  #half:target  #graphbar { display: block; height: 215px; }
-  #full:target  #graphbar { display: block; height: 430px; }
+  #full:target  #graphbar { height: 430px; }
+  #half:target  #graphbar { height: 215px; }
+  #third:target #graphbar { height: 143px; }
+  #empty:target #graphbar { display: none; height: 0px; }
 
   #graphbar:before,
   #graphbar:after {
