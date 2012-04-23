@@ -110,10 +110,10 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
 
 /** BAR GRAPH **/
 #graphbar {
-  transition: height .3s linear;
-   -o-transition: height .3s linear;
-   -moz-transition: height .3s linear;
-   -webkit-transition: height .3s linear;
+  transition: height 1s linear;
+   -o-transition: height 1s linear;
+   -moz-transition: height 1s linear;
+   -webkit-transition: height 1s linear;
   z-index: 2;
   position: absolute;
   width: 311px;
