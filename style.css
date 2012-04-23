@@ -120,7 +120,8 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   height: 322px;
   bottom: -49px;
   left: 0px;
-  background-color: rgba(121, 204, 50, .7);
+  /*background-color: rgba(121, 204, 50, .7);*/
+  background-color: rgba(5, 62, 123, .7);
 }
 
   #f100:target  #graphbar { height: 430px; }
@@ -148,7 +149,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   #graphbar:after {
     top: -50px;
     width: 262px;
-    border-bottom: 50px solid rgba(121, 204, 50, .7);
+    border-bottom: 50px solid rgba(5, 62, 123, .7);
     border-left: 0px solid transparent;
     border-right: 51px solid transparent;
   }
@@ -165,9 +166,9 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   content: "";
   position: absolute;
   border-style: none none dotted;
-  border-color: #b1b1b1;
+  border-color: rgba(177, 177, 177, .4);
   border-width: 0 0 2px; 
-  background: #ddd;
+  background: rgba(221, 221, 221, .3);
 }
 /* Front tick line */
 .label:before {
