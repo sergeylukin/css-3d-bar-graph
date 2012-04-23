@@ -92,7 +92,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
     right: 71px;
     width: 431px;
     height: 50px;
-    background-color: rgba(120, 120, 120, .4);
+    background-color: rgba(120, 120, 120, .27);
     -moz-transform: rotate(90deg) skew(-45deg);
     -webkit-transform: rotate(90deg) skew(-45deg);
   overflow:hidden;
@@ -103,7 +103,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
     right: 24px;
     width: 262px;
     height: 49px;
-    background-color: rgba(120, 120, 120, .3);
+    background-color: rgba(120, 120, 120, .29);
     -moz-transform: skew(45deg);
     -webkit-transform: skew(45deg);
   }
@@ -117,7 +117,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   z-index: 2;
   position: absolute;
   width: 311px;
-  height: 107px;
+  height: 322px;
   bottom: -49px;
   left: 0px;
   background-color: rgba(121, 204, 50, .7);
@@ -160,15 +160,16 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
 }
 .label, .label:before {
   border-style: none none dotted;
-  border-color: #ddd;
+  border-color: #b1b1b1;
   border-width: 0 0 2px 0; 
+  background: #ddd;
 }
 .label:before {
   content: "";
   position: absolute;
-  width: 68px;
-  top: -26px;
-  left: -59px;
+  width: 70px;
+  top: -25px;
+  left: -58px;
   -webkit-transform: rotate(45deg);
 }
 #p25 {
