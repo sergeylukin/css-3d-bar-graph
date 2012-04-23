@@ -48,11 +48,11 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   }
   /* Bottom panel */
   #graphbackground:before { 
-    bottom: -48px;
+    bottom: -49px;
     left: 25px;
     width: 262px;
     height: 49px;
-    background-color: rgba(160, 160, 160, .2);
+    background-color: rgba(160, 160, 160, .1);
     -moz-transform: skew(45deg);
     -webkit-transform: skew(45deg);
   }
