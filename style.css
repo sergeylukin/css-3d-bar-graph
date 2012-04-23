@@ -148,7 +148,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   /* top fill */
   #graphbar:after {
     top: -50px;
-    width: 262px;
+    width: 261px;
     border-bottom: 50px solid rgba(5, 62, 123, .7);
     border-left: 0px solid transparent;
     border-right: 51px solid transparent;
