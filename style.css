@@ -117,15 +117,16 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   z-index: 2;
   position: absolute;
   width: 311px;
-  height: 143px;
+  height: 107px;
   bottom: -49px;
   left: 0px;
   background-color: rgba(121, 204, 50, .7);
 }
 
-  #full:target  #graphbar { height: 430px; }
-  #half:target  #graphbar { height: 215px; }
-  #third:target #graphbar { height: 143px; }
+  #f100:target  #graphbar { height: 430px; }
+  #f75:target  #graphbar { height: 322px; }
+  #f50:target  #graphbar { height: 215px; }
+  #f25:target #graphbar { height: 107px; }
   #empty:target #graphbar { display: none; height: 0px; }
 
   #graphbar:before,
@@ -151,3 +152,31 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
     border-left: 0px solid transparent;
     border-right: 51px solid transparent;
   }
+
+/** LABELS **/
+.label {
+  position: absolute;
+  width: 262px;
+}
+.label, .label:before {
+  border-style: none none dotted;
+  border-color: #ddd;
+  border-width: 0 0 2px 0; 
+}
+.label:before {
+  content: "";
+  position: absolute;
+  width: 68px;
+  top: -26px;
+  left: -59px;
+  -webkit-transform: rotate(45deg);
+}
+#p25 {
+  bottom: 105px;
+}
+#p50 {
+  bottom: 213px;
+}
+#p75 {
+  bottom: 320px;
+}
