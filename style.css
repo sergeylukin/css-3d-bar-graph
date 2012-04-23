@@ -7,29 +7,29 @@ ul {
   list-style: none;
   float: left;
 }
+
 ul a {
-  color: #12C; font-weight: bold; text-decoration: none; display: block; margin: 10px;
+  color: #12C;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  margin: 10px;
   background: #CDD0D0;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
   border-radius: 20px;
   padding: 10px;
   text-align: center;
   color: #393939;
 }
 
-a[href="#f50"],
-#f100:target a[href="#f100"],
-#f75:target a[href="#f75"],
-#f50:target a[href="#f50"],
-#f25:target a[href="#f25"],
-#empty:target a[href="#empty"] {
+a[href="#f50"],#f100:target a[href="#f100"],#f75:target a[href="#f75"],#f50:target a[href="#f50"],#f25:target a[href="#f25"],#empty:target a[href="#empty"] {
   background: rgba(5, 62, 123, .7);
   color: #b1b1b1;
 }
 
-#f100:target a[href="#f50"],
-#f75:target a[href="#f50"],
-#f25:target a[href="#f50"],
-#empty:target a[href="#f50"] {
+#f100:target a[href="#f50"],#f75:target a[href="#f50"],#f25:target a[href="#f50"],#empty:target a[href="#f50"] {
   background: #CDD0D0;
   color: #393939;
 }
@@ -41,20 +41,20 @@ a[href="#f50"],
   height: 430px;
   width: 262px;
 }
+
 /* left bottom patch */
 #graphcontainer:before {
   content: "";
-  position:absolute;
-    z-index:12;
-    bottom: -90px;
-    left: 0;
-    width:0;
-    height: 0;
-    border-style: solid;
-    border-width: 45px;
-    border-color: transparent transparent #fff #fff; 
+  position: absolute;
+  z-index: 12;
+  bottom: -90px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 45px;
+  border-color: transparent transparent #fff #fff;
 }
-
 
 /** BACK CASING **/
 /* Back panel */
@@ -65,35 +65,48 @@ a[href="#f50"],
   top: 0;
   left: 0;
   background-color: rgba(160, 160, 160, .2);
-  -moz-transform: rotate(0deg);
+
   -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
-  #graphbackground:before,
-  #graphbackground:after {
-    content: "";
-    position: absolute;
-  }
-  /* Bottom panel */
-  #graphbackground:before { 
-    bottom: -49px;
-    left: 25px;
-    width: 262px;
-    height: 49px;
-    background-color: rgba(160, 160, 160, .1);
-    -moz-transform: skew(45deg);
-    -webkit-transform: skew(45deg);
-  }
-  /* Right back panel */
-  #graphbackground:after {
-  
-    top: 215px;
-    left: 72px;
-    width: 430px;
-    height: 49px;
-    background-color: rgba(160, 160, 160, .0);
-    -moz-transform: rotate(90deg) skew(-45deg);
-    -webkit-transform: rotate(90deg) skew(-45deg);
-  }
+
+#graphbackground:before,#graphbackground:after {
+  content: "";
+  position: absolute;
+}
+
+/* Bottom panel */
+#graphbackground:before {
+  bottom: -49px;
+  left: 25px;
+  width: 262px;
+  height: 49px;
+  background-color: rgba(160, 160, 160, .1);
+
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+}
+
+/* Right back panel */
+#graphbackground:after {
+  top: 215px;
+  left: 72px;
+  width: 430px;
+  height: 49px;
+  background-color: rgba(160, 160, 160, .0);
+
+  -webkit-transform: rotate(90deg) skew(-45deg);
+  -moz-transform: rotate(90deg) skew(-45deg);
+  -o-transform: rotate(90deg) skew(-45deg);
+  -ms-transform: rotate(90deg) skew(-45deg);
+  transform: rotate(90deg) skew(-45deg);
+}
 
 /** FRONT CASING **/
 /* Front panel */
@@ -105,81 +118,115 @@ a[href="#f50"],
   top: 49px;
   left: 49px;
   background-color: rgba(160, 160, 160, .1);
-  -moz-transform: rotate(0deg);
+
   -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
-  #graphforeground:before,
-  #graphforeground:after {
-    content: "";
-    position: absolute;
-  }
-  /* Left panel */
-  #graphforeground:before { 
-    bottom: 215px;
-    right: 71px;
-    width: 431px;
-    height: 50px;
-    background-color: rgba(160, 160, 160, .27);
-    -moz-transform: rotate(90deg) skew(-45deg);
-    -webkit-transform: rotate(90deg) skew(-45deg);
-  overflow:hidden;
-  }
-  /* Top panel */
-  #graphforeground:after {
-    top: -49px;
-    right: 24px;
-    width: 262px;
-    height: 49px;
-    background-color: rgba(160, 160, 160, .2);
-    -moz-transform: skew(45deg);
-    -webkit-transform: skew(45deg);
-  }
+
+#graphforeground:before,#graphforeground:after {
+  content: "";
+  position: absolute;
+}
+
+/* Left panel */
+#graphforeground:before {
+  bottom: 215px;
+  right: 71px;
+  width: 431px;
+  height: 50px;
+  background-color: rgba(160, 160, 160, .27);
+
+  -webkit-transform: rotate(90deg) skew(-45deg);
+  -moz-transform: rotate(90deg) skew(-45deg);
+  -o-transform: rotate(90deg) skew(-45deg);
+  -ms-transform: rotate(90deg) skew(-45deg);
+  transform: rotate(90deg) skew(-45deg);
+  overflow: hidden;
+}
+
+/* Top panel */
+#graphforeground:after {
+  top: -49px;
+  right: 24px;
+  width: 262px;
+  height: 49px;
+  background-color: rgba(160, 160, 160, .2);
+
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+}
 
 /** BAR GRAPH **/
 #graphbar {
+  -webkit-transition: height 1s linear;
+  -moz-transition: height 1s linear;
+  -o-transition: height 1s linear;
+  -ms-transition: height 1s linear;
   transition: height 1s linear;
-   -o-transition: height 1s linear;
-   -moz-transition: height 1s linear;
-   -webkit-transition: height 1s linear;
   z-index: 2;
   position: absolute;
   width: 311px;
   height: 215px;
   bottom: -49px;
   left: 0px;
-  /*background-color: rgba(121, 204, 50, .7);*/
   background-color: rgba(5, 62, 123, .7);
 }
 
-  #f100:target  #graphbar { height: 430px; }
-  #f75:target  #graphbar { height: 322px; }
-  #f50:target  #graphbar { height: 215px; }
-  #f25:target #graphbar { height: 107px; }
-  #empty:target #graphbar { display: none; height: 0px; }
+#f100:target #graphbar {
+  height: 430px;
+}
 
-  #graphbar:before,
-  #graphbar:after {
-    content: "";
-    position: absolute;
-  }
-  /* top shadow */
-  #graphbar:before {
-    top: -49px;
-    right: 25px;
-    width: 262px;
-    height: 49px;
-    background-color: rgba(160, 160, 160, .4);
-    -moz-transform: skew(45deg);
-    -webkit-transform: skew(45deg);
-  }
-  /* top fill */
-  #graphbar:after {
-    top: -50px;
-    width: 261px;
-    border-bottom: 50px solid rgba(5, 62, 123, .7);
-    border-left: 0px solid transparent;
-    border-right: 51px solid transparent;
-  }
+#f75:target #graphbar {
+  height: 322px;
+}
+
+#f50:target #graphbar {
+  height: 215px;
+}
+
+#f25:target #graphbar {
+  height: 107px;
+}
+
+#empty:target #graphbar {
+  display: none;
+  height: 0px;
+}
+
+#graphbar:before,#graphbar:after {
+  content: "";
+  position: absolute;
+}
+
+/* top shadow */
+#graphbar:before {
+  top: -49px;
+  right: 25px;
+  width: 262px;
+  height: 49px;
+  background-color: rgba(160, 160, 160, .4);
+
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+}
+
+/* top fill */
+#graphbar:after {
+  top: -50px;
+  width: 261px;
+  border-bottom: 50px solid rgba(5, 62, 123, .7);
+  border-left: 0px solid transparent;
+  border-right: 51px solid transparent;
+}
 
 /** TICKS LABELS **/
 .label {
@@ -189,35 +236,45 @@ a[href="#f50"],
   font-weight: normal;
   color: #434343;
 }
-.label:before, .label:after {
+
+.label:before,.label:after {
   content: "";
   position: absolute;
   border-style: none none dotted;
   border-color: rgba(177, 177, 177, .4);
-  border-width: 0 0 2px; 
+  border-width: 0 0 2px;
   background: rgba(221, 221, 221, .3);
 }
+
 /* Front tick line */
 .label:before {
   width: 262px;
-  bottom:0;
+  bottom: 0;
   left: 0;
 }
+
 /* Side tick line */
 .label:after {
   width: 69px;
   bottom: 24px;
   left: -58px;
-  -moz-transform: rotate(45deg);
+
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
+
 /* Position the lines */
 #p25 {
   bottom: 105px;
 }
+
 #p50 {
   bottom: 213px;
 }
+
 #p75 {
   bottom: 320px;
 }
