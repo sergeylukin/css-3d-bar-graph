@@ -1,3 +1,14 @@
+Markup
+======
+
+``` html
+<div id="graphcontainer">
+	<div id="graphbackground"></div>
+	<div id="graphbar"></div>
+	<div id="graphforeground"></div>
+</div>
+```
+
 Demo
 ====
 
