@@ -71,7 +71,7 @@ body {
   height: 430px;
   top: 89px;
   left: 89px;
-  background-color: rgba(120, 120, 120, .3);
+  background-color: rgba(120, 120, 120, .2);
   -moz-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
 }
@@ -97,7 +97,7 @@ body {
     right: 44px;
     width: 262px;
     height: 89px;
-    background-color: rgba(120, 120, 120, .4);
+    background-color: rgba(120, 120, 120, .3);
     -moz-transform: skew(45deg);
     -webkit-transform: skew(45deg);
   }
