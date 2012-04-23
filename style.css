@@ -180,6 +180,7 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   width: 69px;
   bottom: 24px;
   left: -58px;
+  -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
 /* Position the lines */
