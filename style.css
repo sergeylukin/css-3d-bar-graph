@@ -1,5 +1,5 @@
 body {
-  background-color: #CEDBEB;
+  background-color: #fff;
 }
 
 /** CONTAINER **/
@@ -19,7 +19,7 @@ body {
     height: 0;
     border-style: solid;
     border-width: 45px;
-    border-color: transparent transparent #CEDBEB #CEDBEB; 
+    border-color: transparent transparent #fff #fff; 
 }
 
 
@@ -42,10 +42,10 @@ body {
   }
   /* Bottom panel */
   #graphbackground:before { 
-    bottom: -88px;
-    left: 45px;
+    bottom: -48px;
+    left: 25px;
     width: 262px;
-    height: 89px;
+    height: 49px;
     background-color: rgba(120, 120, 120, .5);
     -moz-transform: skew(45deg);
     -webkit-transform: skew(45deg);
@@ -54,9 +54,9 @@ body {
   #graphbackground:after {
   
     top: 215px;
-    left: 92px;
+    left: 72px;
     width: 430px;
-    height: 89px;
+    height: 49px;
     background-color: rgba(120, 120, 120, .1);
     -moz-transform: rotate(90deg) skew(-45deg);
     -webkit-transform: rotate(90deg) skew(-45deg);
@@ -69,8 +69,8 @@ body {
   position: absolute;
   width: 262px;
   height: 430px;
-  top: 89px;
-  left: 89px;
+  top: 49px;
+  left: 49px;
   background-color: rgba(120, 120, 120, .2);
   -moz-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
@@ -83,9 +83,9 @@ body {
   /* Left panel */
   #graphforeground:before { 
     bottom: 215px;
-    right: 91px;
+    right: 71px;
     width: 431px;
-    height: 90px;
+    height: 50px;
     background-color: rgba(120, 120, 120, .4);
     -moz-transform: rotate(90deg) skew(-45deg);
     -webkit-transform: rotate(90deg) skew(-45deg);
@@ -93,10 +93,10 @@ body {
   }
   /* Top panel */
   #graphforeground:after {
-    top: -89px;
-    right: 44px;
+    top: -49px;
+    right: 24px;
     width: 262px;
-    height: 89px;
+    height: 49px;
     background-color: rgba(120, 120, 120, .3);
     -moz-transform: skew(45deg);
     -webkit-transform: skew(45deg);
@@ -110,9 +110,9 @@ body {
    -webkit-transition: height .3s linear;
   z-index: 2;
   position: absolute;
-  width: 351px;
+  width: 311px;
   height: 200px;
-  bottom: -89px;
+  bottom: -49px;
   left: 0px;
   background-color: rgba(121, 204, 50, .7);
 }
@@ -123,19 +123,19 @@ body {
   }
   /* top shadow */
   #graphbar:before {
-    top: -89px;
-    right: 45px;
+    top: -49px;
+    right: 25px;
     width: 262px;
-    height: 89px;
+    height: 49px;
     background-color: rgba(120, 120, 120, .4);
     -moz-transform: skew(45deg);
     -webkit-transform: skew(45deg);
   }
   /* top fill */
   #graphbar:after {
-    top: -89px;
+    top: -50px;
     width: 262px;
-    border-bottom: 90px solid rgba(121, 204, 50, .7);
+    border-bottom: 50px solid rgba(121, 204, 50, .7);
     border-left: 0px solid transparent;
-    border-right: 91px solid transparent;
+    border-right: 51px solid transparent;
   }
