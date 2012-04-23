@@ -1,11 +1,38 @@
 body {
   font: bold 16px sans-serif;
 }
+
+/* Navigation */
 ul {
   list-style: none;
   float: left;
 }
-a { color: #12C; font-weight: bold; text-decoration: none; display: block; margin: 10px;}
+ul a {
+  color: #12C; font-weight: bold; text-decoration: none; display: block; margin: 10px;
+  background: #CDD0D0;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  color: #393939;
+}
+
+a[href="#f50"],
+#f100:target a[href="#f100"],
+#f75:target a[href="#f75"],
+#f50:target a[href="#f50"],
+#f25:target a[href="#f25"],
+#empty:target a[href="#empty"] {
+  background: rgba(5, 62, 123, .7);
+  color: #b1b1b1;
+}
+
+#f100:target a[href="#f50"],
+#f75:target a[href="#f50"],
+#f25:target a[href="#f50"],
+#empty:target a[href="#f50"] {
+  background: #CDD0D0;
+  color: #393939;
+}
 
 /** CONTAINER **/
 #graphcontainer {
