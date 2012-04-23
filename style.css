@@ -1,6 +1,11 @@
 body {
   background-color: #fff;
 }
+ul {
+  list-style: none;
+  float: left;
+}
+a { color: #12C; font-weight: bold; text-decoration: none; display: block; margin: 10px;}
 
 /** CONTAINER **/
 #graphcontainer {
@@ -112,11 +117,17 @@ body {
   z-index: 2;
   position: absolute;
   width: 311px;
-  height: 100px;
+  height: 0;
+  display: none; /* hide by default */
   bottom: -49px;
   left: 0px;
   background-color: rgba(121, 204, 50, .7);
 }
+
+  #third:target #graphbar { display: block; height: 100px; }
+  #half:target  #graphbar { display: block; height: 240px; }
+  #full:target  #graphbar { display: block; height: 430px; }
+
   #graphbar:before,
   #graphbar:after {
     content: "";
