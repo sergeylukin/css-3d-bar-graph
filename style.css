@@ -124,8 +124,8 @@ a { color: #12C; font-weight: bold; text-decoration: none; display: block; margi
   background-color: rgba(121, 204, 50, .7);
 }
 
-  #third:target #graphbar { display: block; height: 100px; }
-  #half:target  #graphbar { display: block; height: 240px; }
+  #third:target #graphbar { display: block; height: 143px; }
+  #half:target  #graphbar { display: block; height: 215px; }
   #full:target  #graphbar { display: block; height: 430px; }
 
   #graphbar:before,
