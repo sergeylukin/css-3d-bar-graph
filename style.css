@@ -4,9 +4,10 @@ body {
 
 /** CONTAINER **/
 #graphcontainer {
- margin: 4em;
+  margin: 4em auto;
   position: relative;
   height: 430px;
+  width: 262px;
 }
 /* left bottom patch */
 #graphcontainer:before {
@@ -111,7 +112,7 @@ body {
   z-index: 2;
   position: absolute;
   width: 311px;
-  height: 200px;
+  height: 100px;
   bottom: -49px;
   left: 0px;
   background-color: rgba(121, 204, 50, .7);
