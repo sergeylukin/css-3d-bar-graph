@@ -3,36 +3,58 @@ body {
 }
 
 /* Navigation */
-ul {
-  list-style: none;
-  float: left;
+input[name="fill"] {
+  display:none;
 }
-
-ul a {
+input[name="fill"] + label {
   color: #12C;
   font-weight: bold;
   text-decoration: none;
   display: block;
-  margin: 10px;
+  width: 80px;
   background: #CDD0D0;
+  padding: 10px;
+  margin: 10px;
+
+  cursor: pointer;
 
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  padding: 10px;
   text-align: center;
   color: #393939;
 }
-
-a[href="#f50"],#f100:target a[href="#f100"],#f75:target a[href="#f75"],#f50:target a[href="#f50"],#f25:target a[href="#f25"],#empty:target a[href="#empty"] {
+input[name="fill"]:checked + label {
   background: rgba(5, 62, 123, .7);
   color: #b1b1b1;
 }
 
-#f100:target a[href="#f50"],#f75:target a[href="#f50"],#f25:target a[href="#f50"],#empty:target a[href="#f50"] {
-  background: #CDD0D0;
-  color: #393939;
+/* Make bar interactive */
+input#full:checked ~ div #graphbar {
+ height: 430px;
 }
+
+input#f75:checked ~ div #graphbar {
+ height: 322px;
+}
+
+input#f50:checked ~ div #graphbar {
+ height: 215px;
+}
+
+input#f25:checked ~ div #graphbar {
+ height: 107px;
+}
+
+input#empty:checked ~ div #graphbar {
+ display: none;
+  height: 0px;
+}
+/* position graph higher according to navigation..
+   it's just to keep the styles of graph cleaner
+   there is no need in this except for this specific page */
+#graphcontainer { margin-top: -275px !important; }
+
 
 /** CONTAINER **/
 #graphcontainer {
@@ -172,31 +194,10 @@ a[href="#f50"],#f100:target a[href="#f100"],#f75:target a[href="#f75"],#f50:targ
   z-index: 2;
   position: absolute;
   width: 311px;
-  height: 215px;
+  height: 215px; /* default state, change this to move the bar */
   bottom: -49px;
   left: 0px;
   background-color: rgba(5, 62, 123, .7);
-}
-
-#f100:target #graphbar {
-  height: 430px;
-}
-
-#f75:target #graphbar {
-  height: 322px;
-}
-
-#f50:target #graphbar {
-  height: 215px;
-}
-
-#f25:target #graphbar {
-  height: 107px;
-}
-
-#empty:target #graphbar {
-  display: none;
-  height: 0px;
 }
 
 #graphbar:before,#graphbar:after {

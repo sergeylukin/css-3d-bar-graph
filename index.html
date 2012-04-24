@@ -7,38 +7,25 @@
 
 	<h1>Pure CSS 3D Bar Graph</h1>
 
-	
 
-	<div id="empty">
-		<div id="f25">
-			<div id="f50">
-				<div id="f75">
-					<div id="f100">
+	<p>Choose action:</p>
+	<input type="radio" name="fill" id="full" /><label for="full">Fill Full</label>
+	<input type="radio" name="fill" id="f75" /><label for="f75">Fill 75%</label>
+	<input type="radio" name="fill" id="f50" checked="checked" /><label for="f50">Fill 50%</label>
+	<input type="radio" name="fill" id="f25" /><label for="f25">Fill 25%</label>
+	<input type="radio" name="fill" id="empty" /><label for="empty">Empty</label>
 
-						<ul>
-							<li>Choose action:</li>
-							<li><a href="#f100">Fill Full</a></li>
-							<li><a href="#f75">Fill 75%</a></li>
-							<li><a href="#f50">Fill 50%</a></li>
-							<li><a href="#f25">Fill 25%</a></li>
-							<li><a href="#empty">Empty</a></li>
-						</ul>
 
-						<div id="graphcontainer">
-							<div id="graphbackground"></div>
-							<div id="graphbar"></div>
-							<div id="graphforeground">
-								<div id="p25" class="label">25%</div>
-								<div id="p50" class="label">50%</div>
-								<div id="p75" class="label">75%</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
+	<div id="graphcontainer">
+		<div id="graphbackground"></div>
+		<div id="graphbar"></div>
+		<div id="graphforeground">
+			<div id="p25" class="label">25%</div>
+			<div id="p50" class="label">50%</div>
+			<div id="p75" class="label">75%</div>
 		</div>
 	</div>
+
 
   <!-- GitHub fork ribbon -->
   <a href="https://github.com/sergeylukin/css-3d-bar-graph"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
