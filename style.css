@@ -1,6 +1,11 @@
 body {
   font: bold 16px sans-serif;
 }
+h1 {
+  font-family: Verdana, sans-serif;
+  font-size: 50px;
+  color: rgba(5, 62, 123, .7);
+}
 
 /* Navigation */
 input[name="fill"] {
