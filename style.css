@@ -1,9 +1,9 @@
 body {
-  font: bold 16px sans-serif;
+  font: bold 14px sans-serif;
 }
 h1 {
   font-family: Verdana, sans-serif;
-  font-size: 50px;
+  font-size: 3em;
   color: rgba(5, 62, 123, .7);
 }
 
@@ -16,16 +16,16 @@ input[name="fill"] + label {
   font-weight: bold;
   text-decoration: none;
   display: block;
-  width: 80px;
+  width: 5em;
   background: #CDD0D0;
-  padding: 10px;
-  margin: 10px;
+  padding: .7em;
+  margin: .7em;
 
   cursor: pointer;
 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
   text-align: center;
   color: #393939;
 }
@@ -36,36 +36,37 @@ input[name="fill"]:checked + label {
 
 /* Make bar interactive */
 input#full:checked ~ div #graphbar {
- bottom: 430px;
+ bottom: 43em;
 }
 
 input#f75:checked ~ div #graphbar {
- bottom: 322px;
+ bottom: 32.2em;
 }
 
 input#f50:checked ~ div #graphbar {
- bottom: 215px;
+ bottom: 21.5em;
 }
 
 input#f25:checked ~ div #graphbar {
- bottom: 107px;
+ bottom: 10.7em;
 }
 
 input#empty:checked ~ div #graphbar {
-  bottom: -50px;
+  bottom: -5em;
 }
 /* position graph higher according to navigation..
    it's just to keep the styles of graph cleaner
    there is no need in this except for this specific page */
-#graphcontainer { margin-top: -275px !important; }
+#graphcontainer { margin-top: -33em !important; }
 
 
 /** CONTAINER **/
 #graphcontainer {
+  font-size: 8px;
   margin: 2em auto;
   position: relative;
-  height: 479px;
-  width: 370px;
+  height: 47.9em;
+  width: 37em;
   overflow:hidden;
 }
 
@@ -75,20 +76,20 @@ input#empty:checked ~ div #graphbar {
   content: "";
   position: absolute;
   z-index: 12;
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 50px 50px 0;
+  border-width: 0 5em 5em 0;
   border-color: transparent transparent #fff transparent;
 }
 
 /** BACK CASING **/
 /* Back panel */
 #graphbackground {
-  width: 262px;
-  height: 430px;
+  width: 26.2em;
+  height: 43em;
   position: absolute;
   top: 0;
   left: 0;
@@ -108,10 +109,10 @@ input#empty:checked ~ div #graphbar {
 
 /* Bottom panel */
 #graphbackground:before {
-  bottom: -49px;
-  left: 25px;
-  width: 262px;
-  height: 49px;
+  bottom: -4.9em;
+  left: 2.5em;
+  width: 26.2em;
+  height: 4.9em;
   background-color: rgba(160, 160, 160, .1);
 
   -webkit-transform: skew(45deg);
@@ -123,10 +124,10 @@ input#empty:checked ~ div #graphbar {
 
 /* Right back panel */
 #graphbackground:after {
-  top: 215px;
-  left: 72px;
-  width: 430px;
-  height: 49px;
+  top: 21.5em;
+  left: 7.2em;
+  width: 43em;
+  height: 4.9em;
   background-color: rgba(160, 160, 160, .0);
 
   -webkit-transform: rotate(90deg) skew(-45deg);
@@ -141,10 +142,10 @@ input#empty:checked ~ div #graphbar {
 #graphforeground {
   z-index: 3;
   position: absolute;
-  width: 262px;
-  height: 430px;
-  top: 49px;
-  left: 49px;
+  width: 26.2em;
+  height: 43em;
+  top: 4.9em;
+  left: 4.9em;
   background-color: rgba(160, 160, 160, .1);
 
   -webkit-transform: rotate(0deg);
@@ -161,10 +162,10 @@ input#empty:checked ~ div #graphbar {
 
 /* Left panel */
 #graphforeground:before {
-  bottom: 215px;
-  right: 71px;
-  width: 431px;
-  height: 50px;
+  bottom: 21.5em;
+  right: 7.1em;
+  width: 43.1em;
+  height: 5em;
   background-color: rgba(160, 160, 160, .27);
 
   -webkit-transform: rotate(90deg) skew(-45deg);
@@ -177,10 +178,10 @@ input#empty:checked ~ div #graphbar {
 
 /* Top panel */
 #graphforeground:after {
-  top: -49px;
-  right: 24px;
-  width: 262px;
-  height: 49px;
+  top: -4.9em;
+  right: 2.4em;
+  width: 26.2em;
+  height: 4.9em;
   background-color: rgba(160, 160, 160, .2);
 
   -webkit-transform: skew(45deg);
@@ -199,11 +200,11 @@ input#empty:checked ~ div #graphbar {
   transition: bottom 1s linear;
   z-index: 2;
   position: absolute;
-  width: 311px;
-  height: 430px;
-  bottom: -50px; /* don't fill bar by default - */
-  left: 0px;
-  margin-bottom:-430px;
+  width: 31.1em;
+  height: 43em;
+  bottom: -5em; /* don't fill bar by default - */
+  left: 0;
+  margin-bottom:-43em;
   background-color: rgba(5, 62, 123, .7);
 }
 
@@ -214,10 +215,10 @@ input#empty:checked ~ div #graphbar {
 
 /* top shadow */
 #graphbar:before {
-  top: -49px;
-  right: 25px;
-  width: 262px;
-  height: 49px;
+  top: -4.9em;
+  right: 2.5em;
+  width: 26.2em;
+  height: 4.9em;
   background-color: rgba(160, 160, 160, .4);
 
   -webkit-transform: skew(45deg);
@@ -229,18 +230,19 @@ input#empty:checked ~ div #graphbar {
 
 /* top fill */
 #graphbar:after {
-  top: -50px;
-  width: 261px;
-  border-bottom: 50px solid rgba(5, 62, 123, .7);
-  border-left: 0px solid transparent;
-  border-right: 51px solid transparent;
+  top: -5em;
+  width: 26.1em;
+  border-bottom: 5em solid rgba(5, 62, 123, .7);
+  border-left: 0 solid transparent;
+  border-right: 5.1em solid transparent;
 }
 
 /** TICKS LABELS **/
 .label {
   position: absolute;
-  text-indent: 270px;
-  line-height: 4px;
+  text-indent: 18em;
+  line-height: .4em;
+  font-size: 1.5em;
   font-weight: normal;
   color: #434343;
 }
@@ -250,22 +252,22 @@ input#empty:checked ~ div #graphbar {
   position: absolute;
   border-style: none none dotted;
   border-color: rgba(177, 177, 177, .4);
-  border-width: 0 0 2px;
+  border-width: 0 0 .15em;
   background: rgba(221, 221, 221, .3);
 }
 
 /* Front tick line */
 .label:before {
-  width: 262px;
+  width: 17.5em;
   bottom: 0;
   left: 0;
 }
 
 /* Side tick line */
 .label:after {
-  width: 69px;
-  bottom: 24px;
-  left: -58px;
+  width: 6.9em;
+  bottom: 2.4em;
+  left: -5.8em;
 
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -276,13 +278,13 @@ input#empty:checked ~ div #graphbar {
 
 /* Position the lines */
 #p25 {
-  bottom: 105px;
+  bottom: 6.9em;
 }
 
 #p50 {
-  bottom: 213px;
+  bottom: 14.2em;
 }
 
 #p75 {
-  bottom: 320px;
+  bottom: 21.3em;
 }
