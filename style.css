@@ -1,68 +1,6 @@
-body {
-  font: bold 16px sans-serif;
-}
-h1 {
-  font-family: Verdana, sans-serif;
-  font-size: 3em;
-  color: rgba(5, 62, 123, .7);
-}
-
-/* Navigation */
-input[name="fill"] {
-  display:none;
-}
-input[name="fill"] + label {
-  color: #12C;
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
-  width: 5em;
-  background: #CDD0D0;
-  padding: .7em;
-  margin: .7em;
-
-  cursor: pointer;
-
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  border-radius: 2em;
-  text-align: center;
-  color: #393939;
-}
-input[name="fill"]:checked + label {
-  background: rgba(5, 62, 123, .7);
-  color: #b1b1b1;
-}
-
-/* Make bar interactive */
-input#full:checked ~ div #graphbar {
- bottom: 43em;
-}
-
-input#f75:checked ~ div #graphbar {
- bottom: 32.2em;
-}
-
-input#f50:checked ~ div #graphbar {
- bottom: 21.5em;
-}
-
-input#f25:checked ~ div #graphbar {
- bottom: 10.7em;
-}
-
-input#empty:checked ~ div #graphbar {
-  bottom: -5em;
-}
-/* position graph higher according to navigation..
-   it's just to keep the styles of graph cleaner
-   there is no need in this except for this specific page */
-#graphcontainer { margin-top: -30em !important; }
-
-
 /** CONTAINER **/
 #graphcontainer {
-  font-size: 10px;
+  font-size: 7.8px;
   margin: 2em auto;
   position: relative;
   height: 47.9em;
@@ -202,7 +140,7 @@ input#empty:checked ~ div #graphbar {
   position: absolute;
   width: 31.1em;
   height: 43em;
-  bottom: -5em; /* don't fill bar by default - */
+  bottom: -5em; /* default bar state */
   left: 0;
   margin-bottom:-43em;
   background-color: rgba(5, 62, 123, .7);
@@ -287,4 +225,154 @@ input#empty:checked ~ div #graphbar {
 
 #p75 {
   bottom: 21.3em;
+}
+
+
+
+/*------------------------------------*\
+ *  General
+\*------------------------------------*/
+body {
+  font: bold 16px sans-serif;
+}
+h1 {
+  font-family: Verdana, sans-serif;
+  font-size: 3em;
+  color: rgba(5, 62, 123, .7);
+}
+
+/* Navigation */
+input[name="fill"] {
+  display:none;
+}
+input[name="fill"] + label {
+  color: #12C;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  width: 5em;
+  background: #CDD0D0;
+  padding: .7em;
+  margin: .7em;
+
+  cursor: pointer;
+
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  text-align: center;
+  color: #393939;
+}
+input[name="fill"]:checked + label {
+  background: rgba(5, 62, 123, .7);
+  color: #b1b1b1;
+}
+
+/* Make bar interactive */
+input#full:checked ~ div #graphbar {
+ bottom: 43em;
+}
+
+input#f75:checked ~ div #graphbar {
+ bottom: 32.2em;
+}
+
+input#f50:checked ~ div #graphbar {
+ bottom: 21.5em;
+}
+
+input#f25:checked ~ div #graphbar {
+ bottom: 10.7em;
+}
+
+input#empty:checked ~ div #graphbar {
+  bottom: -5em;
+}
+/* position graph higher according to navigation..
+   it's just to keep the styles of graph cleaner
+   there is no need in this except for this specific page */
+#graphcontainer { margin-top: -30em !important; }
+
+/*------------------------------------*\
+ *  Responsive queries
+\*------------------------------------*/
+@media only screen and (max-width: 480px) {
+    body {
+      font-size: 8px;
+    }
+    input[name="fill"] + label {
+      display: inline;
+      margin: .1em;
+    }
+    #github {
+      display: none;
+    }
+    #graphcontainer {
+      font-size: 5px;
+      margin-top: 5em !important;
+    }
+}
+@media only screen and (min-width: 480px) {
+    body {
+      font-size: 10px;
+    }
+    input[name="fill"] + label {
+      display: block;
+      margin: .5em;
+    }
+    #github {
+      display: block;
+    }
+    #graphcontainer {
+      font-size: 6px;
+      margin-top: -25em !important;
+    }
+}
+@media only screen and (min-width: 600px) {
+    body {
+      font-size: 12px;
+    }
+    #graphcontainer {
+      font-size: 7px;
+      margin-top: -30em !important;
+    }
+}
+/* 768px */
+@media only screen and (min-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    #graphcontainer {
+      font-size: 8px;
+    }
+}
+/* 992px */
+@media only screen and (min-width: 992px) {
+    body {
+      font-size: 16px;
+    }
+    #graphcontainer {
+      font-size: 9px;
+    }
+}
+/* 1382px */
+@media only screen and (min-width: 1382px) {
+    body {
+      font-size: 18px;
+    }
+    #graphcontainer {
+      font-size: 10px;
+    }
+}
+
+
+/*------------------------------------*\
+ *  Resize me image
+\*------------------------------------*/
+#resize {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
 }
