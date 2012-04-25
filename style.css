@@ -1,5 +1,5 @@
 body {
-  font: bold 14px sans-serif;
+  font: bold 16px sans-serif;
 }
 h1 {
   font-family: Verdana, sans-serif;
@@ -57,12 +57,12 @@ input#empty:checked ~ div #graphbar {
 /* position graph higher according to navigation..
    it's just to keep the styles of graph cleaner
    there is no need in this except for this specific page */
-#graphcontainer { margin-top: -33em !important; }
+#graphcontainer { margin-top: -30em !important; }
 
 
 /** CONTAINER **/
 #graphcontainer {
-  font-size: 8px;
+  font-size: 10px;
   margin: 2em auto;
   position: relative;
   height: 47.9em;
@@ -278,7 +278,7 @@ input#empty:checked ~ div #graphbar {
 
 /* Position the lines */
 #p25 {
-  bottom: 6.9em;
+  bottom: 7em;
 }
 
 #p50 {
