@@ -2,12 +2,16 @@ Markup
 ======
 
 ``` html
-<div id="graphcontainer">
-	<div id="graphbackground"></div>
-	<div id="graphbar"></div>
-	<div id="graphforeground"></div>
+<div class="bar-wrapper">
+  <div class="bar-container">
+    <div class="bar-background"></div>
+    <div class="bar-inner"></div>
+    <div class="bar-foreground"></div>
+  </div>
 </div>
 ```
+
+In order to flip bar horizontally, add `.rtl` class to `.bar-wrapper`
 
 Demo
 ====

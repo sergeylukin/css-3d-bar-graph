@@ -1,57 +1,65 @@
-/** CONTAINER **/
-#graphcontainer {
-  font-size: 7.8px;
-  margin: 2em auto;
-  position: relative;
-  height: 47.9em;
-  width: 37em;
-  overflow:hidden;
-}
+/*********************
+ * Graph Bars styles *
+ *********************/
 
-/* left bottom patch */
-#graphcontainer:before {
-  
+/* Bar wrapper - hides the inner bar when it goes below the bar, required */
+.bar-wrapper {
+  overflow: hidden;
+}
+/* Bar container - this guy is a real parent of a bar's parts - they all are positioned relative to him */
+.bar-container {
+  position: relative;
+  margin-top: 2.5em; /* should be at least equal to the top offset of background casing */
+                     /* because back casing is positioned higher than actual bar */
+  width: 12.5em; /* required, we have to define the width of a bar */
+  /* Bars size */
+  font-size: 15px;
+  /* Bars height */
+  height: 20em;
+}
+/* right bottom patch - make sure inner bar's right bottom corner is "cut" when it slides down */
+.bar-container:before {
   content: "";
   position: absolute;
-  z-index: 12;
+  z-index: 3; /* to be above .bar-inner */
+
   bottom: 0;
   left: 0;
+
+  /* Use bottom border to shape triangle */
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 5em 5em 0;
-  border-color: transparent transparent #fff transparent;
+  border-width: 0 2.5em 2.5em 0;
+  border-color: transparent transparent #fff;
 }
 
 /** BACK CASING **/
 /* Back panel */
-#graphbackground {
-  width: 26.2em;
-  height: 43em;
+.bar-background {
+  width: 10em;
+  height: 100%;
   position: absolute;
-  top: 0;
+  top: -2.5em;
   left: 0;
-  background-color: rgba(160, 160, 160, .2);
-
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  z-index: 1; /* just for reference */
+  background-color: rgba(160, 160, 160, .1); /* default color */
 }
 
-#graphbackground:before,#graphbackground:after {
+.bar-background:before,
+.bar-background:after {
   content: "";
   position: absolute;
 }
 
 /* Bottom panel */
-#graphbackground:before {
-  bottom: -4.9em;
-  left: 2.5em;
-  width: 26.2em;
-  height: 4.9em;
-  background-color: rgba(160, 160, 160, .1);
+.bar-background:before {
+  bottom: -2.5em;
+  left: 1.25em;
+  width: 10em;
+  height: 2.5em;
+
+  background-color: rgba(160, 160, 160, .2); /* default color */
 
   -webkit-transform: skew(45deg);
   -moz-transform: skew(45deg);
@@ -60,66 +68,69 @@
   transform: skew(45deg);
 }
 
-/* Right back panel */
-#graphbackground:after {
-  top: 21.5em;
-  left: 7.2em;
-  width: 43em;
-  height: 4.9em;
-  background-color: rgba(160, 160, 160, .0);
+/* Left back panel */
+.bar-background:after {
+  top: 1.25em;
+  left: 100%;
+  width: 2.5em;
+  height: 100%;
 
-  -webkit-transform: rotate(90deg) skew(-45deg);
-  -moz-transform: rotate(90deg) skew(-45deg);
-  -o-transform: rotate(90deg) skew(-45deg);
-  -ms-transform: rotate(90deg) skew(-45deg);
-  transform: rotate(90deg) skew(-45deg);
+  background-color: rgba(160, 160, 160, .05); /* default color */
+
+  /* skew only the Y-axis */
+  -webkit-transform: skew(0deg, 45deg);
+  -moz-transform: skew(0deg, 45deg);
+  -o-transform: skew(0deg, 45deg);
+  -ms-transform: skew(0deg, 45deg);
+  transform: skew(0deg, 45deg);
 }
 
 /** FRONT CASING **/
 /* Front panel */
-#graphforeground {
-  z-index: 3;
+.bar-foreground {
+    z-index: 3; /* be above .bar-background and .bar-inner */
+    background-color: rgba(160, 160, 160, .1); /* default color */
+}
+.bar-foreground,
+.bar-inner {
   position: absolute;
-  width: 26.2em;
-  height: 43em;
-  top: 4.9em;
-  left: 4.9em;
-  background-color: rgba(160, 160, 160, .1);
-
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  width: 10em;
+  height: 100%;
+  top: 0;
+  right: 0;
 }
 
-#graphforeground:before,#graphforeground:after {
+.bar-foreground:before,
+.bar-foreground:after,
+.bar-inner:before,
+.bar-inner:after {
   content: "";
   position: absolute;
 }
 
-/* Left panel */
-#graphforeground:before {
-  bottom: 21.5em;
-  right: 7.1em;
-  width: 43.1em;
-  height: 5em;
+/* Right front panel */
+.bar-foreground:before,
+.bar-inner:before {
+  top: -1.25em;
+  left: -2.5em;
+  width: 2.5em;
+  height: 100%;
   background-color: rgba(160, 160, 160, .27);
 
-  -webkit-transform: rotate(90deg) skew(-45deg);
-  -moz-transform: rotate(90deg) skew(-45deg);
-  -o-transform: rotate(90deg) skew(-45deg);
-  -ms-transform: rotate(90deg) skew(-45deg);
-  transform: rotate(90deg) skew(-45deg);
-  overflow: hidden;
+  -webkit-transform: skew(0deg, 45deg);
+  -moz-transform: skew(0deg, 45deg);
+  -o-transform: skew(0deg, 45deg);
+  -ms-transform: skew(0deg, 45deg);
+  transform: skew(0deg, 45deg);
 }
 
-/* Top panel */
-#graphforeground:after {
-  top: -4.9em;
-  right: 2.4em;
-  width: 26.2em;
-  height: 4.9em;
+/* Top front panel */
+.bar-foreground:after,
+.bar-inner:after {
+  top: -2.5em;
+  left: -1.25em;
+  width: 100%;
+  height: 2.5em;
   background-color: rgba(160, 160, 160, .2);
 
   -webkit-transform: skew(45deg);
@@ -129,63 +140,44 @@
   transform: skew(45deg);
 }
 
-/** BAR GRAPH **/
-#graphbar {
-  -webkit-transition: bottom 1s linear;
-  -moz-transition: bottom 1s linear;
-  -o-transition: bottom 1s linear;
-  -ms-transition: bottom 1s linear;
-  transition: bottom 1s linear;
-  z-index: 2;
-  position: absolute;
-  width: 31.1em;
-  height: 43em;
-  bottom: -5em; /* default bar state */
-  left: 0;
-  margin-bottom:-43em;
-  background-color: rgba(5, 62, 123, .7);
+/** BAR's inner block **/
+.bar-inner {
+  z-index: 2; /* to be above .bar-background */
+  top: auto; /* reset position top */
+  
+  background-color: rgba(5, 62, 123, .7); /* default color */
+
+  height: 0;
+  bottom: -2.5em;
+  color: transparent; /* hide text values */
+
+  -webkit-transition: height 1s linear, bottom 1s linear;
+  -moz-transition: height 1s linear, bottom 1s linear;
+  -o-transition: height 1s linear, bottom 1s linear;
+  -ms-transition: height 1s linear, bottom 1s linear;
+  transition: height 1s linear, bottom 1s linear;
 }
-
-#graphbar:before,#graphbar:after {
-  content: "";
-  position: absolute;
+.bar-inner,
+.bar-inner:before {
+  background-color: rgba(5, 62, 123, .7); /* default color */
 }
-
-/* top shadow */
-#graphbar:before {
-  top: -4.9em;
-  right: 2.5em;
-  width: 26.2em;
-  height: 4.9em;
-  background-color: rgba(160, 160, 160, .4);
-
-  -webkit-transform: skew(45deg);
-  -moz-transform: skew(45deg);
-  -o-transform: skew(45deg);
-  -ms-transform: skew(45deg);
-  transform: skew(45deg);
-}
-
-/* top fill */
-#graphbar:after {
-  top: -5em;
-  width: 26.1em;
-  border-bottom: 5em solid rgba(5, 62, 123, .7);
-  border-left: 0 solid transparent;
-  border-right: 5.1em solid transparent;
+.bar-inner:after {
+  background-color: rgba(5, 62, 123, .6); /* default color */
 }
 
 /** TICKS LABELS **/
-.label {
+.bar-foreground .label {
   position: absolute;
-  text-indent: 18em;
-  line-height: .4em;
-  font-size: 1.5em;
+  line-height: .2em;
+  font-size: .7em;
   font-weight: normal;
   color: #434343;
+  width: 100%;
+  left: 0;
 }
 
-.label:before,.label:after {
+.bar-foreground .label:before,
+.bar-foreground .label:after {
   content: "";
   position: absolute;
   border-style: none none dotted;
@@ -195,17 +187,18 @@
 }
 
 /* Front tick line */
-.label:before {
-  width: 17.5em;
-  bottom: 0;
+.bar-foreground .label:before {
+  width: 100%;
+  bottom: -.1em;
   left: 0;
 }
 
 /* Side tick line */
-.label:after {
-  width: 6.9em;
-  bottom: 2.4em;
-  left: -5.8em;
+.bar-foreground .label:after {
+  width: 35%;
+  bottom: 1.75em;
+  left: -4.3em;
+  z-index: 2;
 
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -214,31 +207,142 @@
   transform: rotate(45deg);
 }
 
+.bar-foreground .label span {
+  position: absolute;
+  left: 103%;
+  top: -.1em;
+}
+
+
 /* Position the lines */
-#p25 {
-  bottom: 7em;
+.p25 {
+  bottom: 25%;
 }
 
-#p50 {
-  bottom: 14.2em;
+.p50 {
+  bottom: 50%;
 }
 
-#p75 {
-  bottom: 21.3em;
+.p75 {
+  bottom: 75%;
 }
+
+
+
+
+
+/** Styles for horizontally flipped bar **/
+
+/* right bottom patch - make sure inner bar's right bottom corner is "cut" when
+ * it slides down */
+.bar-wrapper.rtl {
+  padding-left: 4em; /* let labels be visible */
+}
+.bar-wrapper.rtl .bar-container:before {
+  left: auto;
+  right: 0;
+
+  border-width: 0 0 2.5em 2.5em;
+}
+
+/* Back panel */
+.bar-wrapper.rtl .bar-background {
+  right: auto;
+  left: 2.5em;
+}
+
+/* Back panel */
+.bar-wrapper.rtl .bar-background {
+  left: auto;
+  right: 0;
+}
+/* Bottom panel */
+.bar-wrapper.rtl .bar-background:before {
+  left: auto;
+  right: 1.25em;
+
+  -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+          transform: skew(-45deg);
+}
+
+/* Left back panel */
+.bar-wrapper.rtl .bar-background:after {
+  left: auto;
+  right: 100%;
+
+  /* skew only the Y-axis */
+    -webkit-transform: skew(0deg, -45deg);
+      -moz-transform: skew(0deg, -45deg);
+        -o-transform: skew(0deg, -45deg);
+          -ms-transform: skew(0deg, -45deg);
+            transform: skew(0deg, -45deg);
+}
+/* Front panel & Inner bar */
+.bar-wrapper.rtl .bar-foreground,
+.bar-wrapper.rtl .bar-inner {
+  right: auto;
+  left: 0;
+}
+/* Right front panel */
+.bar-wrapper.rtl .bar-foreground:before,
+.bar-wrapper.rtl .bar-inner:before {
+  left: auto;
+  right: -2.5em;
+
+  -webkit-transform: skew(0deg, -45deg);
+    -moz-transform: skew(0deg, -45deg);
+      -o-transform: skew(0deg, -45deg);
+        -ms-transform: skew(0deg, -45deg);
+          transform: skew(0deg, -45deg);
+}
+/* Top front panel */
+.bar-wrapper.rtl .bar-foreground:after,
+.bar-wrapper.rtl .bar-inner:after {
+  left: auto;
+  right: -1.25em;
+
+  -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+          transform: skew(-45deg);
+}
+/* Side tick line */
+.bar-wrapper.rtl .label:after {
+  left: auto;
+  right: -4.3em;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.bar-wrapper.rtl .label span {
+  left: -2.5em;
+}
+
+
 
 
 
 /*------------------------------------*\
- *  General
+ *  UI Elements
 \*------------------------------------*/
 body {
   font: bold 16px sans-serif;
+  color: #304345;
 }
 h1 {
   font-family: Verdana, sans-serif;
   font-size: 3em;
-  color: rgba(5, 62, 123, .7);
+  /* color: rgba(120, 154, 161, 1); */
+  /* color: rgba(191, 96, 96, 1); */
+  /* color: rgba(56, 56, 56, 1); */
+  color: rgba(124, 142, 166, 1);
 }
 
 /* Navigation */
@@ -251,7 +355,8 @@ input[name="fill"] + label {
   text-decoration: none;
   display: block;
   width: 5em;
-  background: #CDD0D0;
+  /* background: rgba(222, 220, 195, 1); */
+  background: rgba(204, 204, 204, 1);
   padding: .7em;
   margin: .7em;
 
@@ -264,34 +369,97 @@ input[name="fill"] + label {
   color: #393939;
 }
 input[name="fill"]:checked + label {
-  background: rgba(5, 62, 123, .7);
-  color: #b1b1b1;
+  /* background: rgba(135, 121, 99, .7); */
+  /* background: rgba(56, 56, 56, 1); */
+  /* background: #7c8ea6; */
+  background-color: rgba(5, 62, 123, .6);
+  color: #ccc;
 }
 
 /* Make bar interactive */
-input#full:checked ~ div #graphbar {
- bottom: 43em;
+input#full:checked ~ .bar-wrapper .bar-inner { height: 100%; bottom: 0; }
+input#f75:checked ~ .bar-wrapper .bar-inner { height: 75%; bottom: 0; }
+input#f50:checked ~ .bar-wrapper .bar-inner { height: 50%; bottom: 0; }
+input#f25:checked ~ .bar-wrapper .bar-inner { height: 25%; bottom: 0; }
+input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
+
+/*------------------------------------*\
+ *  Resize me image
+\*------------------------------------*/
+#resize {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
-input#f75:checked ~ div #graphbar {
- bottom: 32.2em;
+
+
+
+
+
+
+/******************************************************************************
+ **                                                                          **
+ ** VARIABLES                                                                **
+ **                                                                          **
+ ******************************************************************************/
+
+/****************
+ *    Colors    *
+ ****************/
+/* Body background */
+body {
+  background-color: #fff;
+}
+/* Bar patch color */
+.bar-container:before {
+  border-color: transparent transparent #fff;
 }
 
-input#f50:checked ~ div #graphbar {
- bottom: 21.5em;
+/* Bar's Back side */
+.bar-background {
+  background-color: rgba(160, 160, 160, .1);
+}
+/* Bar's Bottom side */
+.bar-background:before {
+  background-color: rgba(160, 160, 160, .2);
+}
+/* Bar's Left Back side */
+.bar-background:after {
+  background-color: rgba(160, 160, 160, .05);
+}
+/* Bar's Front side */
+.bar-foreground {
+  background-color: rgba(160, 160, 160, .1);
 }
 
-input#f25:checked ~ div #graphbar {
- bottom: 10.7em;
+/* Inner block + Right panel */
+.bar-inner,
+.bar-inner:before {
+  /* background-color: rgba(71, 160, 204, .6); */
+  /* background-color: rgba(0, 60, 137, .6); */
+  background-color: rgba(5, 62, 123, .7);
+}
+/* Inner block Top panel */
+.bar-inner:after {
+  /* background-color: rgba(71, 160, 204, .4); */
+  /* background-color: rgba(0, 60, 137, .5); */
+  background-color: rgba(5, 62, 123, .6);
 }
 
-input#empty:checked ~ div #graphbar {
-  bottom: -5em;
+/**********
+** SIZES **
+**********/
+/* usually you don't need that but in demo we want to position bar in the
+ * middle so we are setting width and margin: auto */
+.bar-wrapper {
+  width: 23em;
+  margin: 0 auto;
+  margin-top: -17em;
 }
-/* position graph higher according to navigation..
-   it's just to keep the styles of graph cleaner
-   there is no need in this except for this specific page */
-#graphcontainer { margin-top: -30em !important; }
+
 
 /*------------------------------------*\
  *  Responsive queries
@@ -307,9 +475,11 @@ input#empty:checked ~ div #graphbar {
     #github {
       display: none;
     }
-    #graphcontainer {
-      font-size: 5px;
-      margin-top: 5em !important;
+    .bar-wrapper {
+      margin-top: 4em;
+    }
+    .bar-container {
+      font-size: 10.5px;
     }
 }
 @media only screen and (min-width: 480px) {
@@ -323,18 +493,16 @@ input#empty:checked ~ div #graphbar {
     #github {
       display: block;
     }
-    #graphcontainer {
-      font-size: 6px;
-      margin-top: -25em !important;
+    .bar-container {
+      font-size: 12px;
     }
 }
 @media only screen and (min-width: 600px) {
     body {
       font-size: 12px;
     }
-    #graphcontainer {
-      font-size: 7px;
-      margin-top: -30em !important;
+    .bar-container {
+      font-size: 16px;
     }
 }
 /* 768px */
@@ -342,8 +510,8 @@ input#empty:checked ~ div #graphbar {
     body {
       font-size: 14px;
     }
-    #graphcontainer {
-      font-size: 8px;
+    .bar-container {
+      font-size: 20px;
     }
 }
 /* 992px */
@@ -351,8 +519,8 @@ input#empty:checked ~ div #graphbar {
     body {
       font-size: 16px;
     }
-    #graphcontainer {
-      font-size: 9px;
+    .bar-container {
+      font-size: 24px;
     }
 }
 /* 1382px */
@@ -360,19 +528,7 @@ input#empty:checked ~ div #graphbar {
     body {
       font-size: 18px;
     }
-    #graphcontainer {
-      font-size: 10px;
+    .bar-container {
+      font-size: 28px;
     }
-}
-
-
-/*------------------------------------*\
- *  Resize me image
-\*------------------------------------*/
-#resize {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  padding: 0px;
-  margin: 0px;
 }
