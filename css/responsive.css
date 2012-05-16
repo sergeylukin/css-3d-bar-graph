@@ -12,6 +12,7 @@
       display: inline;
       margin: .1em;
     }
+    #resize,
     #github {
       display: none;
     }

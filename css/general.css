@@ -9,12 +9,26 @@ html {
   /* background: -moz-radial-gradient(circle, #e3f1ff, #e3f1ff); */
   /* background: -ms-radial-gradient(circle, #e3f1ff, #e3f1ff); */
   /* background-color: #45648c; */
-  background-color: #bfbfbf;
+  background: -ms-radial-gradient(circle, #73A711, #3D5809);
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#73A711), to(#3D5809));
+  background: -webkit-radial-gradient(circle, #73A711, #3D5809);
+  background: -moz-radial-gradient(circle, #73A711, #3D5809);
+  background: -ms-radial-gradient(circle, #73A711, #3D5809);
+
+  background: -ms-radial-gradient(circle, #1865B1, #0A4277);
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1865B1), to(#0A4277));
+  background: -webkit-radial-gradient(circle, #1865B1, #0A4277);
+  background: -moz-radial-gradient(circle, #1865B1, #0A4277);
+  background: -ms-radial-gradient(circle, #1865B1, #0A4277);
+
+  /* background-color: #bfbfbf; */
 }
 body {
   font: bold 16px sans-serif;
  /* background-color: #e3f1ff;*/
   color: #7c8ea6;
+
+  text-align: center;
 
   margin: 0;
   padding: 2em;
@@ -30,8 +44,9 @@ h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 3em;
   /* color: #45648c; */
-  color: #535252;
-  margin: 0;
+  /* color: #535252; */
+  color: #cccccc;
+  text-shadow: 1px 1px 1px #535252;
 }
 
 /* Navigation */
@@ -44,7 +59,7 @@ input[name="fill"] + label {
   text-decoration: none;
   display: block;
   width: 5em;
-  background: rgba(204, 204, 204, 1);
+  background: rgba(204, 204, 204, .5);
   padding: .7em;
   margin: .7em;
 
@@ -57,7 +72,9 @@ input[name="fill"] + label {
   color: #393939;
 }
 input[name="fill"]:checked + label {
-  background-color: rgba(5, 62, 123, .6);
+  /* background-color: rgba(5, 62, 123, .7); */
+  /* background-color: #72986f; */
+  background-color: #082643;
   color: #ccc;
 }
 
@@ -96,7 +113,7 @@ input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
 .demo-window {
   padding: 1em;
   display: block;
-  background-color: #ecebeb;
+  background-color: #164b7f;
   max-width: 31em;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);

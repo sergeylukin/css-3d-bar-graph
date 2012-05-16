@@ -8,7 +8,7 @@
  ****************/
 /* Bar patch color - should as bar's background */
 .bar-container:before {
-  border-color: transparent transparent #ecebeb;
+  border-color: transparent transparent #164b7f;
 }
 
 /* Back panel */
@@ -36,16 +36,27 @@
 .bar-inner,
 .bar-inner:before {
   background-color: #053e7b;
-  background-color: rgba(5, 62, 123, .7);
+  /* background-color: rgba(21, 92, 168, .7); */
+  /* background-color: rgba(48, 141, 19, .7); */
+  /* background-color: rgba(5, 123, 5, .6); */
+  /* background-color: rgba(255, 248, 136, .3); */
+  /* background-color: rgba(196, 109, 59, .6); */
+  background-color: rgba(129, 158, 187, .4);
 }
 /* Inner Top panel */
 .bar-inner:after {
-  background-color: rgba(5, 62, 123, .6);
+  /* background-color: rgba(21, 92, 168, .9); */
+  /* background-color: rgba(5, 62, 123, .6); */
+  /* background-color: rgba(19, 78, 141, .9); */
+  /* background-color: rgba(5, 123, 5, .4); */
+  /* background-color: rgba(255, 248, 136, .25); */
+  /* background-color: rgba(196, 109, 59, .4); */
+  background-color: rgba(129, 158, 187, .2);
 }
 
 /* Bar Labels colors */
 .bar-foreground .label {
-  color: #5a5a5a;
+  color: #ccc;
 }
 .bar-foreground .label:before,
 .bar-foreground .label:after {
