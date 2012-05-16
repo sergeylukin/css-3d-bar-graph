@@ -1,0 +1,12 @@
+p,
+input[name="fill"] + label {
+  display: none;
+}
+
+.bar-wrapper {
+  margin-top: 0;
+}
+
+#resize {
+  display: none;
+}

@@ -89,6 +89,7 @@
 /* Front panel */
 .bar-foreground {
     z-index: 3; /* be above .bar-background and .bar-inner */
+    background-color: #a0a0a0;
     background-color: rgba(160, 160, 160, .1); /* default color */
 }
 .bar-foreground,
@@ -145,6 +146,7 @@
   z-index: 2; /* to be above .bar-background */
   top: auto; /* reset position top */
   
+  background-color: #053e7b;
   background-color: rgba(5, 62, 123, .7); /* default color */
 
   height: 0;
@@ -157,10 +159,12 @@
   -ms-transition: height 1s linear, bottom 1s linear;
   transition: height 1s linear, bottom 1s linear;
 }
+/* Front & Side panels*/
 .bar-inner,
 .bar-inner:before {
   background-color: rgba(5, 62, 123, .7); /* default color */
 }
+/* Top panel */
 .bar-inner:after {
   background-color: rgba(5, 62, 123, .6); /* default color */
 }

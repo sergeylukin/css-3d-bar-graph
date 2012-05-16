@@ -4,11 +4,12 @@
 body {
   font: bold 16px sans-serif;
   background-color: #e3f1ff;
-  color: #45648c;
+  color: #7c8ea6;
 }
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 3em;
+  color: #45648c;
 }
 
 /* Navigation */

@@ -35,6 +35,7 @@
 /* Inner Side panel */
 .bar-inner,
 .bar-inner:before {
+  background-color: #053e7b;
   background-color: rgba(5, 62, 123, .7);
 }
 /* Inner Top panel */
