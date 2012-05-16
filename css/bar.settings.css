@@ -43,6 +43,9 @@
 }
 
 /* Bar Labels colors */
+.bar-foreground .label {
+  color: #5a5a5a;
+}
 .bar-foreground .label:before,
 .bar-foreground .label:after {
   border-color: rgba(177, 177, 177, .4);

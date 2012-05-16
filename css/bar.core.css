@@ -173,6 +173,7 @@
   font-weight: normal;
   width: 100%;
   left: 0;
+  color: #5a5a5a;
 }
 
 .bar-foreground .label:before,
