@@ -1,6 +1,9 @@
 /*------------------------------------*\
  *  Responsive queries
 \*------------------------------------*/
+.bar-wrapper {
+      width: 23em;
+}
 @media only screen and (max-width: 480px) {
     body {
       font-size: 8px;
@@ -12,11 +15,14 @@
     #github {
       display: none;
     }
+    .demo-window {
+      padding-top: 3em;
+    }
     .social-buttons {
       position: static;
     }
     .bar-wrapper {
-      margin-top: 4em;
+      margin: 4em auto;
     }
     .bar-container {
       font-size: 10.5px;
@@ -32,6 +38,13 @@
     }
     #github {
       display: block;
+    }
+    .bar-wrapper { 
+      margin-top: -14.5em;
+      margin-left: 9em;
+    }
+    .bar-wrapper.rtl {
+      margin-left: 7em;
     }
     .bar-container {
       font-size: 12px;

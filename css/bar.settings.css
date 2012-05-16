@@ -8,7 +8,7 @@
  ****************/
 /* Bar patch color - should as bar's background */
 .bar-container:before {
-  border-color: transparent transparent #e3f1ff;
+  border-color: transparent transparent #ecebeb;
 }
 
 /* Back panel */
@@ -53,14 +53,3 @@
   background: rgba(221, 221, 221, .3);
 }
 
-
-/**********
-** SIZES **
-**********/
-/* usually you don't need that but in demo we want to position bar in the
- * middle so we are setting width and margin: auto */
-.bar-wrapper {
-  width: 23em;
-  margin: 0 auto;
-  margin-top: -17em;
-}
