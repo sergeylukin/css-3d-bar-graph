@@ -337,12 +337,13 @@ body {
   color: #304345;
 }
 h1 {
-  font-family: Verdana, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 3em;
   /* color: rgba(120, 154, 161, 1); */
   /* color: rgba(191, 96, 96, 1); */
   /* color: rgba(56, 56, 56, 1); */
-  color: rgba(124, 142, 166, 1);
+  /* color: rgba(124, 142, 166, 1); */
+  color: #45648c;
 }
 
 /* Navigation */
@@ -411,11 +412,12 @@ input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
  ****************/
 /* Body background */
 body {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: #e3f1ff;
 }
 /* Bar patch color */
 .bar-container:before {
-  border-color: transparent transparent #fff;
+  border-color: transparent transparent #e3f1ff !important;
 }
 
 /* Bar's Back side */
