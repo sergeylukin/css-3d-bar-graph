@@ -3,12 +3,12 @@
 \*------------------------------------*/
 body {
   font: bold 16px sans-serif;
-  color: #304345;
+  background-color: #e3f1ff;
+  color: #45648c;
 }
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 3em;
-  color: #45648c;
 }
 
 /* Navigation */

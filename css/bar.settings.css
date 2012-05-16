@@ -6,46 +6,49 @@
 /****************
  *    Colors    *
  ****************/
-/* Body background */
-body {
-  /* background-color: #fff; */
-  background-color: #e3f1ff;
-}
-/* Bar patch color */
+/* Bar patch color - should as bar's background */
 .bar-container:before {
-  border-color: transparent transparent #e3f1ff !important;
+  border-color: transparent transparent #e3f1ff;
 }
 
-/* Bar's Back side */
+/* Back panel */
 .bar-background {
   background-color: rgba(160, 160, 160, .1);
 }
-/* Bar's Bottom side */
+/* Bottom panel */
 .bar-background:before {
   background-color: rgba(160, 160, 160, .2);
 }
-/* Bar's Left Back side */
+/* Back Side panel */
 .bar-background:after {
   background-color: rgba(160, 160, 160, .05);
 }
-/* Bar's Front side */
+/* Front panel */
 .bar-foreground {
   background-color: rgba(160, 160, 160, .1);
 }
+/* Front Side panel */
+.bar-foreground:before {
+  background-color: rgba(160, 160, 160, .27);
+}
 
-/* Inner block + Right panel */
+/* Inner Side panel */
 .bar-inner,
 .bar-inner:before {
-  /* background-color: rgba(71, 160, 204, .6); */
-  /* background-color: rgba(0, 60, 137, .6); */
   background-color: rgba(5, 62, 123, .7);
 }
-/* Inner block Top panel */
+/* Inner Top panel */
 .bar-inner:after {
-  /* background-color: rgba(71, 160, 204, .4); */
-  /* background-color: rgba(0, 60, 137, .5); */
   background-color: rgba(5, 62, 123, .6);
 }
+
+/* Bar Labels colors */
+.bar-foreground .label:before,
+.bar-foreground .label:after {
+  border-color: rgba(177, 177, 177, .4);
+  background: rgba(221, 221, 221, .3);
+}
+
 
 /**********
 ** SIZES **
