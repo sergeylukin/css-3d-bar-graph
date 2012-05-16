@@ -1,0 +1,66 @@
+/*------------------------------------*\
+ *  UI Elements
+\*------------------------------------*/
+body {
+  font: bold 16px sans-serif;
+  color: #304345;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  color: #45648c;
+}
+
+/* Navigation */
+input[name="fill"] {
+  display:none;
+}
+input[name="fill"] + label {
+  color: #12C;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  width: 5em;
+  background: rgba(204, 204, 204, 1);
+  padding: .7em;
+  margin: .7em;
+
+  cursor: pointer;
+
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  text-align: center;
+  color: #393939;
+}
+input[name="fill"]:checked + label {
+  background-color: rgba(5, 62, 123, .6);
+  color: #ccc;
+}
+
+/* Make bar interactive */
+input#full:checked ~ .bar-wrapper .bar-inner { height: 100%; bottom: 0; }
+input#f75:checked ~ .bar-wrapper .bar-inner { height: 75%; bottom: 0; }
+input#f50:checked ~ .bar-wrapper .bar-inner { height: 50%; bottom: 0; }
+input#f25:checked ~ .bar-wrapper .bar-inner { height: 25%; bottom: 0; }
+input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
+
+/*------------------------------------*\
+ *  Resize me image
+\*------------------------------------*/
+#resize {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*------------------------------------*\
+ *  Twitter
+\*------------------------------------*/
+.twitter-share-button {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+}

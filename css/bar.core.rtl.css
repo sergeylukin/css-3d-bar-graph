@@ -1,0 +1,95 @@
+/** Styles for horizontally flipped bar **/
+
+/* right bottom patch - make sure inner bar's right bottom corner is "cut" when
+ * it slides down */
+.bar-wrapper.rtl {
+  padding-left: 4em; /* let labels be visible */
+}
+.bar-wrapper.rtl .bar-container:before {
+  left: auto;
+  right: 0;
+
+  border-width: 0 0 2.5em 2.5em;
+}
+
+/* Back panel */
+.bar-wrapper.rtl .bar-background {
+  right: auto;
+  left: 2.5em;
+}
+
+/* Back panel */
+.bar-wrapper.rtl .bar-background {
+  left: auto;
+  right: 0;
+}
+/* Bottom panel */
+.bar-wrapper.rtl .bar-background:before {
+  left: auto;
+  right: 1.25em;
+
+  -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+          transform: skew(-45deg);
+}
+
+/* Left back panel */
+.bar-wrapper.rtl .bar-background:after {
+  left: auto;
+  right: 100%;
+
+  /* skew only the Y-axis */
+    -webkit-transform: skew(0deg, -45deg);
+      -moz-transform: skew(0deg, -45deg);
+        -o-transform: skew(0deg, -45deg);
+          -ms-transform: skew(0deg, -45deg);
+            transform: skew(0deg, -45deg);
+}
+/* Front panel & Inner bar */
+.bar-wrapper.rtl .bar-foreground,
+.bar-wrapper.rtl .bar-inner {
+  right: auto;
+  left: 0;
+}
+/* Right front panel */
+.bar-wrapper.rtl .bar-foreground:before,
+.bar-wrapper.rtl .bar-inner:before {
+  left: auto;
+  right: -2.5em;
+
+  -webkit-transform: skew(0deg, -45deg);
+    -moz-transform: skew(0deg, -45deg);
+      -o-transform: skew(0deg, -45deg);
+        -ms-transform: skew(0deg, -45deg);
+          transform: skew(0deg, -45deg);
+}
+/* Top front panel */
+.bar-wrapper.rtl .bar-foreground:after,
+.bar-wrapper.rtl .bar-inner:after {
+  left: auto;
+  right: -1.25em;
+
+  -webkit-transform: skew(-45deg);
+    -moz-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+        -ms-transform: skew(-45deg);
+          transform: skew(-45deg);
+}
+/* Side tick line */
+.bar-wrapper.rtl .label:after {
+  left: auto;
+  right: -4.3em;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.bar-wrapper.rtl .label span {
+  left: -2.5em;
+}
+
+

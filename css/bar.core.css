@@ -1,0 +1,228 @@
+/*********************
+ * Graph Bars styles *
+ *********************/
+
+/* Bar wrapper - hides the inner bar when it goes below the bar, required */
+.bar-wrapper {
+  overflow: hidden;
+}
+/* Bar container - this guy is a real parent of a bar's parts - they all are positioned relative to him */
+.bar-container {
+  position: relative;
+  margin-top: 2.5em; /* should be at least equal to the top offset of background casing */
+                     /* because back casing is positioned higher than actual bar */
+  width: 12.5em; /* required, we have to define the width of a bar */
+  /* Bars size */
+  font-size: 16px;
+  /* Bars height */
+  height: 20em;
+}
+/* right bottom patch - make sure inner bar's right bottom corner is "cut" when it slides down */
+.bar-container:before {
+  content: "";
+  position: absolute;
+  z-index: 3; /* to be above .bar-inner */
+
+  bottom: 0;
+  left: 0;
+
+  /* Use bottom border to shape triangle */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 2.5em 2.5em 0;
+  border-color: transparent transparent #fff;
+}
+
+/** BACK CASING **/
+/* Back panel */
+.bar-background {
+  width: 10em;
+  height: 100%;
+  position: absolute;
+  top: -2.5em;
+  left: 0;
+  z-index: 1; /* just for reference */
+  background-color: rgba(160, 160, 160, .1); /* default color */
+}
+
+.bar-background:before,
+.bar-background:after {
+  content: "";
+  position: absolute;
+}
+
+/* Bottom panel */
+.bar-background:before {
+  bottom: -2.5em;
+  left: 1.25em;
+  width: 10em;
+  height: 2.5em;
+
+  background-color: rgba(160, 160, 160, .2); /* default color */
+
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+}
+
+/* Left back panel */
+.bar-background:after {
+  top: 1.25em;
+  left: 100%;
+  width: 2.5em;
+  height: 100%;
+
+  background-color: rgba(160, 160, 160, .05); /* default color */
+
+  /* skew only the Y-axis */
+  -webkit-transform: skew(0deg, 45deg);
+  -moz-transform: skew(0deg, 45deg);
+  -o-transform: skew(0deg, 45deg);
+  -ms-transform: skew(0deg, 45deg);
+  transform: skew(0deg, 45deg);
+}
+
+/** FRONT CASING **/
+/* Front panel */
+.bar-foreground {
+    z-index: 3; /* be above .bar-background and .bar-inner */
+    background-color: rgba(160, 160, 160, .1); /* default color */
+}
+.bar-foreground,
+.bar-inner {
+  position: absolute;
+  width: 10em;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.bar-foreground:before,
+.bar-foreground:after,
+.bar-inner:before,
+.bar-inner:after {
+  content: "";
+  position: absolute;
+}
+
+/* Right front panel */
+.bar-foreground:before,
+.bar-inner:before {
+  top: -1.25em;
+  left: -2.5em;
+  width: 2.5em;
+  height: 100%;
+  background-color: rgba(160, 160, 160, .27);
+
+  -webkit-transform: skew(0deg, 45deg);
+  -moz-transform: skew(0deg, 45deg);
+  -o-transform: skew(0deg, 45deg);
+  -ms-transform: skew(0deg, 45deg);
+  transform: skew(0deg, 45deg);
+}
+
+/* Top front panel */
+.bar-foreground:after,
+.bar-inner:after {
+  top: -2.5em;
+  left: -1.25em;
+  width: 100%;
+  height: 2.5em;
+  background-color: rgba(160, 160, 160, .2);
+
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  transform: skew(45deg);
+}
+
+/** BAR's inner block **/
+.bar-inner {
+  z-index: 2; /* to be above .bar-background */
+  top: auto; /* reset position top */
+  
+  background-color: rgba(5, 62, 123, .7); /* default color */
+
+  height: 0;
+  bottom: -2.5em;
+  color: transparent; /* hide text values */
+
+  -webkit-transition: height 1s linear, bottom 1s linear;
+  -moz-transition: height 1s linear, bottom 1s linear;
+  -o-transition: height 1s linear, bottom 1s linear;
+  -ms-transition: height 1s linear, bottom 1s linear;
+  transition: height 1s linear, bottom 1s linear;
+}
+.bar-inner,
+.bar-inner:before {
+  background-color: rgba(5, 62, 123, .7); /* default color */
+}
+.bar-inner:after {
+  background-color: rgba(5, 62, 123, .6); /* default color */
+}
+
+/** TICKS LABELS **/
+.bar-foreground .label {
+  position: absolute;
+  line-height: .2em;
+  font-size: .7em;
+  font-weight: normal;
+  color: #434343;
+  width: 100%;
+  left: 0;
+}
+
+.bar-foreground .label:before,
+.bar-foreground .label:after {
+  content: "";
+  position: absolute;
+  border-style: none none dotted;
+  border-color: rgba(177, 177, 177, .4);
+  border-width: 0 0 .15em;
+  background: rgba(221, 221, 221, .3);
+}
+
+/* Front tick line */
+.bar-foreground .label:before {
+  width: 100%;
+  bottom: -.1em;
+  left: 0;
+}
+
+/* Side tick line */
+.bar-foreground .label:after {
+  width: 35%;
+  bottom: 1.75em;
+  left: -4.3em;
+  z-index: 2;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.bar-foreground .label span {
+  position: absolute;
+  left: 103%;
+  top: -.1em;
+}
+
+
+/* Position the lines */
+.p25 {
+  bottom: 25%;
+}
+
+.p50 {
+  bottom: 50%;
+}
+
+.p75 {
+  bottom: 75%;
+}

@@ -1,0 +1,59 @@
+/******************************************************************************
+ **                                                                          **
+ ** VARIABLES                                                                **
+ **                                                                          **
+ ******************************************************************************/
+/****************
+ *    Colors    *
+ ****************/
+/* Body background */
+body {
+  /* background-color: #fff; */
+  background-color: #e3f1ff;
+}
+/* Bar patch color */
+.bar-container:before {
+  border-color: transparent transparent #e3f1ff !important;
+}
+
+/* Bar's Back side */
+.bar-background {
+  background-color: rgba(160, 160, 160, .1);
+}
+/* Bar's Bottom side */
+.bar-background:before {
+  background-color: rgba(160, 160, 160, .2);
+}
+/* Bar's Left Back side */
+.bar-background:after {
+  background-color: rgba(160, 160, 160, .05);
+}
+/* Bar's Front side */
+.bar-foreground {
+  background-color: rgba(160, 160, 160, .1);
+}
+
+/* Inner block + Right panel */
+.bar-inner,
+.bar-inner:before {
+  /* background-color: rgba(71, 160, 204, .6); */
+  /* background-color: rgba(0, 60, 137, .6); */
+  background-color: rgba(5, 62, 123, .7);
+}
+/* Inner block Top panel */
+.bar-inner:after {
+  /* background-color: rgba(71, 160, 204, .4); */
+  /* background-color: rgba(0, 60, 137, .5); */
+  background-color: rgba(5, 62, 123, .6);
+}
+
+/**********
+** SIZES **
+**********/
+/* usually you don't need that but in demo we want to position bar in the
+ * middle so we are setting width and margin: auto */
+.bar-wrapper {
+  width: 23em;
+  margin: 0 auto;
+  margin-top: -17em;
+}
