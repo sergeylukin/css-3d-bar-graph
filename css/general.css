@@ -57,10 +57,10 @@ input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
 }
 
 /*------------------------------------*\
- *  Twitter
+ *  Social buttons (like Tweet, G+ etc.)
 \*------------------------------------*/
-.twitter-share-button {
+.social-buttons {
   position: absolute;
-  bottom: 1em;
+  bottom: 0;
   left: 1em;
 }
