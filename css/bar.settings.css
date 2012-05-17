@@ -56,9 +56,11 @@
 /****************
  *    Sizes     *
  ****************/
-/* The normal size of a bar*/
 .bar-container {
+  /* The normal size of a bar*/
   font-size: 1em;
+  /* Bars height */
+  height: 20em;
 }
 
  /* Make labels markers visible */
