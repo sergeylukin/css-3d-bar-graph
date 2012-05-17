@@ -36,24 +36,11 @@
 .bar-inner,
 .bar-inner:before {
   background-color: #053e7b;
-  /* background-color: rgba(21, 92, 168, .7); */
-  /* background-color: rgba(48, 141, 19, .7); */
-  /* background-color: rgba(5, 123, 5, .6); */
-  /* background-color: rgba(255, 248, 136, .3); */
   background-color: rgba(133, 165, 204, .3);
-  /*background-color: rgba(255, 255, 100, .4);*/
-  /*background-color: rgba(129, 158, 187, .4);*/
 }
 /* Inner Top panel */
 .bar-inner:after {
-  /* background-color: rgba(21, 92, 168, .9); */
-  /* background-color: rgba(5, 62, 123, .6); */
-  /* background-color: rgba(19, 78, 141, .9); */
-  /* background-color: rgba(5, 123, 5, .4); */
-  /* background-color: rgba(255, 248, 136, .25); */
   background-color: rgba(133, 165, 204, .2);
-  /*background-color: rgba(255, 255, 100, .3);*/
-  /*background-color: rgba(129, 158, 187, .2);*/
 }
 
 /* Bar Labels colors */
@@ -71,7 +58,7 @@
  ****************/
 /* The normal size of a bar*/
 .bar-container {
-  /*font-size: 12px;*/
+  font-size: 1em;
 }
 
  /* Make labels markers visible */
