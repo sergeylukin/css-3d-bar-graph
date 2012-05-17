@@ -13,7 +13,7 @@
                      /* because back casing is positioned higher than actual bar */
   width: 12.5em; /* required, we have to define the width of a bar */
   /* Bars size */
-  font-size: 16px;
+  /*font-size: 16px;*/
   /* Bars height */
   height: 20em;
 }

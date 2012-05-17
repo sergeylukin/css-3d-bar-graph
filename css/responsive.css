@@ -1,89 +1,61 @@
+
+
 /*------------------------------------*\
  *  Responsive queries
 \*------------------------------------*/
-.bar-wrapper {
-      width: 23em;
-}
 @media only screen and (max-width: 480px) {
     body {
-      font-size: 8px;
+      font-size: .65em;
     }
     input[name="fill"] + label {
       display: inline;
       margin: .1em;
     }
+
+    .demo-window {
+      padding: 3em;
+    }
+
     #resize,
     #github {
       display: none;
     }
-    .demo-window {
-      padding-top: 3em;
-    }
     .social-buttons {
       position: static;
-    }
-    .bar-wrapper {
-      margin: 4em auto;
-    }
-    .bar-container {
-      font-size: 10.5px;
     }
 }
 @media only screen and (min-width: 480px) {
     body {
-      font-size: 10px;
+      font-size: .7em;
     }
     input[name="fill"] + label {
-      display: block;
-      margin: .5em;
+      margin: .2em;
     }
     #github {
       display: block;
     }
-    .bar-wrapper { 
-      margin-top: -14.5em;
-      margin-left: 9em;
-    }
-    .bar-wrapper.rtl {
-      margin-left: 7em;
-    }
-    .bar-container {
-      font-size: 12px;
-    }
 }
 @media only screen and (min-width: 600px) {
     body {
-      font-size: 12px;
-    }
-    .bar-container {
-      font-size: 16px;
+      font-size: .75em;
     }
 }
 /* 768px */
 @media only screen and (min-width: 768px) {
     body {
-      font-size: 14px;
-    }
-    .bar-container {
-      font-size: 20px;
+      font-size: 1em;
     }
 }
 /* 992px */
 @media only screen and (min-width: 992px) {
     body {
-      font-size: 16px;
-    }
-    .bar-container {
-      font-size: 24px;
+      font-size: 1.25em;
     }
 }
 /* 1382px */
 @media only screen and (min-width: 1382px) {
     body {
-      font-size: 18px;
-    }
-    .bar-container {
-      font-size: 28px;
+      font-size: 1.5em;
     }
 }
 

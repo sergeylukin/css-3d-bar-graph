@@ -2,9 +2,6 @@
 
 /* right bottom patch - make sure inner bar's right bottom corner is "cut" when
  * it slides down */
-.bar-wrapper.rtl {
-  padding-left: 4em; /* let labels be visible */
-}
 .bar-wrapper.rtl .bar-container:before {
   left: auto;
   right: 0;

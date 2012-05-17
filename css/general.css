@@ -24,14 +24,14 @@ html {
   /* background-color: #bfbfbf; */
 }
 body {
-  font: bold 16px sans-serif;
+  font: bold 1em sans-serif;
  /* background-color: #e3f1ff;*/
   color: #7c8ea6;
 
   text-align: center;
 
   margin: 0;
-  padding: 2em;
+  padding: 1em;
 
     min-height: 100%;
     background-color: transparent;
@@ -43,25 +43,33 @@ body {
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 3em;
+  margin: .5em 0 0;
   /* color: #45648c; */
   /* color: #535252; */
-  color: #cccccc;
+  color: #D3D0C9;
   text-shadow: 1px 1px 1px #535252;
 }
 
 /* Navigation */
+.demo-container label {
+  color: red;
+}
+
 input[name="fill"] {
   display:none;
 }
 input[name="fill"] + label {
-  color: #12C;
+  color: #1E243F;
   font-weight: bold;
   text-decoration: none;
-  display: block;
+  white-space: nowrap;
+  display: inline;
   width: 5em;
   background: rgba(204, 204, 204, .5);
   padding: .7em;
   margin: .7em;
+
+  line-height: 3em;
 
   cursor: pointer;
 
@@ -79,11 +87,11 @@ input[name="fill"]:checked + label {
 }
 
 /* Make bar interactive */
-input#full:checked ~ .bar-wrapper .bar-inner { height: 100%; bottom: 0; }
-input#f75:checked ~ .bar-wrapper .bar-inner { height: 75%; bottom: 0; }
-input#f50:checked ~ .bar-wrapper .bar-inner { height: 50%; bottom: 0; }
-input#f25:checked ~ .bar-wrapper .bar-inner { height: 25%; bottom: 0; }
-input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
+input#full:checked ~ .demo-window .bar-inner { height: 100%; bottom: 0; }
+input#f75:checked ~ .demo-window .bar-inner { height: 75%; bottom: 0; }
+input#f50:checked ~ .demo-window .bar-inner { height: 50%; bottom: 0; }
+input#f25:checked ~ .demo-window .bar-inner { height: 25%; bottom: 0; }
+input#empty:checked ~ .demo-window .bar-inner { height: 0; bottom: -2.5em; }
 
 /*------------------------------------*\
  *  Resize me image
@@ -100,7 +108,7 @@ input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
  *  Social buttons (like Tweet, G+ etc.)
 \*------------------------------------*/
 .social-buttons {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 1em;
 }
@@ -110,17 +118,22 @@ input#empty:checked ~ .bar-wrapper .bar-inner { height: 0; bottom: -2.5em; }
 /*------------------------------------*\
  * Demo-Window 
 \*------------------------------------*/
+.demo-container {
+  margin-top: 2em;
+}
 .demo-window {
-  padding: 1em;
-  display: block;
+  padding: 2em;
+  display: inline-block;
+  
   background-color: #164b7f;
-  max-width: 31em;
+
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   border: 1px solid #696D72;
   border-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px 0 rgba(255,255,255,0.3),inset 0 1px 5px rgba(0,0,0,0.1);
   margin: 0 auto;
+margin-top: 2em;
 }
 
 
