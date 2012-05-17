@@ -58,7 +58,7 @@
  ****************/
 .bar-container {
   /* The normal size of a bar*/
-  font-size: 1em;
+  font-size: 12px;
   /* Bars height */
   height: 20em;
 }

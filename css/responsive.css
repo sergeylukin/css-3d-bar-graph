@@ -41,18 +41,18 @@
 /* 768px */
 @media only screen and (min-width: 768px) {
     body {
-      font-size: 1em;
+      font-size: .85em;
     }
 }
 /* 992px */
 @media only screen and (min-width: 992px) {
     body {
-      font-size: 1.25em;
+      font-size: .9em;
     }
 }
 /* 1382px */
 @media only screen and (min-width: 1382px) {
     body {
-      font-size: 1.5em;
+      font-size: 1em;
     }
 }

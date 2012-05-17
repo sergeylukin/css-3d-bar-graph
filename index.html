@@ -11,6 +11,20 @@
   <link href="css/bar.ie.css" rel="stylesheet" />
   <link href="css/general.ie.css" rel="stylesheet" />
   <![endif]-->
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
+
+  <link rel="stylesheet" href="js/sh/shCore.css"/>
+  <link rel="stylesheet" href="js/sh/shThemeDefault.css"/>
+  <script type='text/javascript' src="js/sh/XregExp.js"></script>
+  <script type='text/javascript' src="js/sh/shCore.js"></script>
+  <script type="text/javascript" src="js/sh/shBrushXml.js"></script>
+  <script type="text/javascript" src="js/sh/shBrushCss.js"></script>
+  <script type="text/javascript">
+    SyntaxHighlighter.defaults['auto-links'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+  </script>
 </head>
 <body>
 
@@ -23,44 +37,138 @@
     <input type="radio" name="fill" id="f50" checked="checked" /><label for="f50">Fill 50%</label>
     <input type="radio" name="fill" id="f75" /><label for="f75">Fill 75%</label>
     <input type="radio" name="fill" id="full" /><label for="full">Fill Full</label>
-
-    <br style="clear: both;" />
-
-    <div class="demo-window">
-      <div class="bar-wrapper with-markers">
-        <div class="bar-container">
-          <div class="bar-background"></div>
-          <div class="bar-inner"></div>
-          <div class="bar-foreground">
-            <div class="label p25"><span>25%</span></div>
-            <div class="label p50"><span>50%</span></div>
-            <div class="label p75"><span>75%</span></div>
+<br />
+    <div class="demo-set">
+      <div class="demo-window">
+        <span class="sticker">Result</span>
+        <div class="bar-wrapper with-markers">
+          <div class="bar-container">
+            <div class="bar-background"></div>
+            <div class="bar-inner"></div>
+            <div class="bar-foreground">
+              <div class="label p25"><span>25%</span></div>
+              <div class="label p50"><span>50%</span></div>
+              <div class="label p75"><span>75%</span></div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="demo-window source">
+        <span class="sticker">HTML Source</span>
+        <pre class="brush:xml">
+        &lt;div class=&quot;bar-wrapper with-markers&quot;&gt;
+          &lt;div class=&quot;bar-container&quot;&gt;
+            &lt;div class=&quot;bar-background&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;bar-inner&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;bar-foreground&quot;&gt;
+              &lt;div class=&quot;label p25&quot;&gt;&lt;span&gt;25%&lt;/span&gt;&lt;/div&gt;
+              &lt;div class=&quot;label p50&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/div&gt;
+              &lt;div class=&quot;label p75&quot;&gt;&lt;span&gt;75%&lt;/span&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        </pre>
+      </div>
+
+      <div class="demo-window source">
+        <span class="sticker">CSS Source</span>
+        <pre class="brush:css">
+        /****************
+         *    Colors    *
+         ****************/
+        /* Bar patch color - should as bar's background */
+        .bar-container:before {
+          border-color: transparent transparent #164b7f;
+        }
+
+        /* Back panel */
+        .bar-background {
+          background-color: rgba(160, 160, 160, .1);
+        }
+        /* Bottom panel */
+        .bar-background:before {
+          background-color: rgba(160, 160, 160, .2);
+        }
+        /* Back Side panel */
+        .bar-background:after {
+          background-color: rgba(160, 160, 160, .05);
+        }
+        /* Front panel */
+        .bar-foreground {
+          background-color: rgba(160, 160, 160, .1);
+        }
+        /* Front Side panel */
+        .bar-foreground:before {
+          background-color: rgba(160, 160, 160, .27);
+        }
+
+        /* Inner Side panel */
+        .bar-inner,
+        .bar-inner:before {
+          background-color: #053e7b;
+          background-color: rgba(133, 165, 204, .3);
+        }
+        /* Inner Top panel */
+        .bar-inner:after {
+          background-color: rgba(133, 165, 204, .2);
+        }
+
+        /* Bar Labels colors */
+        .bar-foreground .label {
+          color: #ccc;
+        }
+        .bar-foreground .label:before,
+        .bar-foreground .label:after {
+          border-color: rgba(177, 177, 177, .4);
+          background: rgba(221, 221, 221, .3);
+        }
+
+        /****************
+         *    Sizes     *
+         ****************/
+        .bar-container {
+          /* The normal size of a bar*/
+          font-size: 12px;
+          /* Bars height */
+          height: 20em;
+        }
+
+         /* Make labels markers visible */
+        .bar-wrapper.with-markers {
+          padding-right: 4em;
+          margin-right: -4em;
+        }
+        .bar-wrapper.with-markers.rtl {
+          padding-left: 4em;
+          margin-left: -4em; 
+        }
+
+        </pre>
+      </div>
     </div>
+
   </div>
 
-  <br />
 
   <div class="social-buttons">
     <!-- Twitter button -->
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="sergey_lukin" data-hashtags="css">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <!--<a href="https://twitter.com/share" class="twitter-share-button" data-via="sergey_lukin" data-hashtags="css">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
     
     <!-- Google Plus button -->
     <div class="g-plusone" data-size="medium"></div>
-    <script type="text/javascript">(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
+    <!--<script type="text/javascript">(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>-->
   </div>
 
   <!-- GitHub fork ribbon -->
-  <a href="https://github.com/sergeylukin/css-3d-bar-graph" id="github"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <!--<a href="https://github.com/sergeylukin/css-3d-bar-graph" id="github"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>-->
 
   <!-- Resize img -->
   <img src="img/resize.png" alt="Resize me!" id="resize" />
 
   <!-- Analytics -->
-  <script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-31126253-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+  <!--<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-31126253-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>-->
 
 </body>
 </html>

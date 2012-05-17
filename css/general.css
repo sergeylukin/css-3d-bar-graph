@@ -10,7 +10,7 @@ html {
   background: -ms-radial-gradient(circle, #1865B1, #0A4277);
 }
 body {
-  font: bold 1em sans-serif;
+  font: normal 1em sans-serif;
   color: #7c8ea6;
 
   text-align: center;
@@ -27,7 +27,7 @@ body {
 }
 h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 3em;
+  font-size: 3.5em;
   margin: .5em 0 0;
   color: #D3D0C9;
   text-shadow: 1px 1px 1px #535252;
@@ -68,11 +68,11 @@ input[name="fill"]:checked + label {
 }
 
 /* Make bar interactive */
-input#full:checked ~ .demo-window .bar-inner { height: 100%; bottom: 0; }
-input#f75:checked ~ .demo-window .bar-inner { height: 75%; bottom: 0; }
-input#f50:checked ~ .demo-window .bar-inner { height: 50%; bottom: 0; }
-input#f25:checked ~ .demo-window .bar-inner { height: 25%; bottom: 0; }
-input#empty:checked ~ .demo-window .bar-inner { height: 0; bottom: -2.5em; }
+input#full:checked ~ .demo-set .bar-inner { height: 100%; bottom: 0; }
+input#f75:checked ~ .demo-set .bar-inner { height: 75%; bottom: 0; }
+input#f50:checked ~ .demo-set .bar-inner { height: 50%; bottom: 0; }
+input#f25:checked ~ .demo-set .bar-inner { height: 25%; bottom: 0; }
+input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
 
 /*------------------------------------*\
  *  Resize me image
@@ -100,19 +100,42 @@ input#empty:checked ~ .demo-window .bar-inner { height: 0; bottom: -2.5em; }
  * Demo-Window 
 \*------------------------------------*/
 .demo-container {
+display:inline-block;
+  margin: 2em auto;
+}
+.demo-set {
   margin-top: 2em;
+  display: inline-block;
+  max-width: 20em;
 }
 .demo-window {
+
   padding: 2em;
+  position: relative;
   display: inline-block;
   
   background-color: #164b7f;
 
   border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  
   border: 1px solid #696D72;
   border-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px 0 rgba(255,255,255,0.3),inset 0 1px 5px rgba(0,0,0,0.1);
-  margin: 0 auto;
-  margin-top: 2em;
+  margin-right: 2em;
+}
+
+.demo-window .sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .2em .5em;
+  background-color: #286097;
+  background-color: rgba(40, 96, 151, .5);
+  border-radius: 4px 0;
+}
+
+.demo-window.source {
+  padding: 2em 1em;
+  width: 35em;
+  text-align: left;
 }
