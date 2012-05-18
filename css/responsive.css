@@ -64,6 +64,9 @@ body::before{
     body::before{ content: "min-width: 992px"; }
 
     /* Position UI Elements */
+    .demo-set {
+      
+    }
     .demo-window {
       display: inline-block;
       float: left;
@@ -71,7 +74,10 @@ body::before{
     }
     .source-container {
       float: left;
-      max-width: auto;
+      display: inline-block;
+    }
+    .source-window {
+      max-width: 38em;
     }
 }
 
