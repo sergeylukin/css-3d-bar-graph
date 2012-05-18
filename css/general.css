@@ -97,9 +97,10 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
  *  Social buttons (like Tweet, G+ etc.)
 \*------------------------------------*/
 .social-buttons {
-  position: static;
-  bottom: 0;
-  left: 1em;
+  position: absolute;
+  top: 1.4em;
+  left: 1.6em;
+  display: none; /* hide for small devices */
 }
 
 

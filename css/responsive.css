@@ -44,10 +44,6 @@ body::before{
       display: block;
     }
 
-    .social-buttons {
-      position: fixed;
-    }
-
 }
 
 /* Tablet - Portrait */
@@ -57,7 +53,9 @@ body::before{
     }
     body::before{ content: "min-width: 768px"; }
     
-    
+    .social-buttons {
+      display: block;
+    }
 
 }
 /* Tablet - Landscape */
@@ -68,9 +66,6 @@ body::before{
     body::before{ content: "min-width: 992px"; }
 
     /* Position UI Elements */
-    .demo-set {
-      
-    }
     .demo-window {
       display: inline-block;
       float: left;
