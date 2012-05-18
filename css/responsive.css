@@ -1,58 +1,84 @@
+body::before{
+  content: "Before 480px";
+    font-weight: bold;
+    display: none;
+    text-align: center;
+    background: rgba(255,255,0, 0.9);   /* Semi-transparent yellow */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.bar-wrapper {
+  display: inline-block;
+}
+
 /*------------------------------------*\
  *  Responsive queries
 \*------------------------------------*/
-@media only screen and (max-width: 480px) {
-    body {
-      font-size: .65em;
-    }
-    input[name="fill"] + label {
-      display: inline;
-      margin: .1em;
-    }
-
-    .demo-window {
-      padding: 3em;
-    }
-
-    #resize,
-    #github {
-      display: none;
-    }
-    .social-buttons {
-      position: static;
-    }
-}
-@media only screen and (min-width: 480px) {
+/* Small Tablet / Blackberry / Newer iPhone */
+@media only screen and (min-width: 460px) {
     body {
       font-size: .7em;
     }
+    body::before{ content: "min-width: 480px"; }
     input[name="fill"] + label {
       margin: .2em;
     }
+
+    .demo-set {
+      display: inline-block;
+    }
+    .demo-window,
+    .source-window {
+      display: block;
+    }
+    .source-container,
+    .source-window {
+      width: auto;
+    }
+
     #github {
       display: block;
     }
+
 }
-@media only screen and (min-width: 600px) {
-    body {
-      font-size: .75em;
-    }
-}
-/* 768px */
-@media only screen and (min-width: 768px) {
+
+/* Tablet - Portrait */
+@media only screen and (min-width: 740px) {
     body {
       font-size: .85em;
     }
+    body::before{ content: "min-width: 768px"; }
+    
+    
+
 }
-/* 992px */
+/* Tablet - Landscape */
 @media only screen and (min-width: 992px) {
     body {
       font-size: .9em;
     }
+    body::before{ content: "min-width: 992px"; }
+
+    /* Position UI Elements */
+    .demo-window {
+      display: inline-block;
+      float: left;
+      margin: 0 2em 0 0;
+    }
+    .source-container {
+      float: left;
+      max-width: auto;
+    }
 }
-/* 1382px */
-@media only screen and (min-width: 1382px) {
+
+/* Desktop */
+@media only screen and (min-width: 1200px) {
     body {
       font-size: 1em;
     }
+    body::before{ content: "min-width: 1200px"; }
 }

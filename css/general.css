@@ -10,7 +10,7 @@ html {
   background: -ms-radial-gradient(circle, #1865B1, #0A4277);
 }
 body {
-  font: normal 1em sans-serif;
+  font: normal .65em sans-serif;
   color: #7c8ea6;
 
   text-align: center;
@@ -50,7 +50,7 @@ input[name="fill"] + label {
   width: 5em;
   background: rgba(204, 204, 204, .5);
   padding: .7em;
-  margin: .7em;
+  margin: .1em;
 
   line-height: 3em;
 
@@ -85,46 +85,51 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
   margin: 0px;
 }
 
+#resize,
+#github {
+  display: none;
+}
+
 /*------------------------------------*\
  *  Social buttons (like Tweet, G+ etc.)
 \*------------------------------------*/
 .social-buttons {
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 1em;
 }
 
 
-
 /*------------------------------------*\
  * Demo-Window 
 \*------------------------------------*/
+/* Container of all the UI (tools and windows) */
 .demo-container {
-display:inline-block;
-  margin: 2em auto;
-}
-.demo-set {
   margin-top: 2em;
-  display: inline-block;
-  max-width: 20em;
 }
+/* Container of Windows */
+.demo-set {
+  
+  margin-top: 2em;
+}
+/* A window */
 .demo-window {
-
-  padding: 2em;
-  position: relative;
+  margin: 0 0 2em;
   display: inline-block;
-  
+}
+.demo-window,
+.source-window {
+  position: relative;/* required for .sticker to be positioned correctly */
+  padding: 2em;
   background-color: #164b7f;
-
-  border-radius: 4px;
-  
   border: 1px solid #696D72;
   border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(255,255,255,0.3),inset 0 1px 5px rgba(0,0,0,0.1);
-  margin-right: 2em;
 }
-
-.demo-window .sticker {
+/* A helper in top-left corner */
+.demo-window .sticker,
+.source-window .sticker {
   position: absolute;
   top: 0;
   left: 0;
@@ -133,9 +138,47 @@ display:inline-block;
   background-color: rgba(40, 96, 151, .5);
   border-radius: 4px 0;
 }
-
-.demo-window.source {
-  padding: 2em 1em;
-  width: 35em;
+/* Window with source code */
+.source-window {
+  margin-bottom: 2em;
   text-align: left;
+
+  width: 70%;
+  overflow:hidden;
+  display: inline-block;
+}
+
+.source-container {
+  width: 75%;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Clearfix */
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    *zoom:1;
 }

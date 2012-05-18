@@ -62,13 +62,3 @@
   /* Bars height */
   height: 20em;
 }
-
- /* Make labels markers visible */
-.bar-wrapper.with-markers {
-  padding-right: 4em;
-  margin-right: -4em;
-}
-.bar-wrapper.with-markers.rtl {
-  padding-left: 4em;
-  margin-left: -4em; 
-}

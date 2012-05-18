@@ -1,5 +1,11 @@
 /** Styles for horizontally flipped bar **/
 
+ /* Make labels markers visible */
+.bar-wrapper.with-markers.rtl {
+  padding-left: 3em;
+  margin-left: -3em; 
+}
+
 /* right bottom patch - make sure inner bar's right bottom corner is "cut" when
  * it slides down */
 .bar-wrapper.rtl .bar-container:before {

@@ -6,6 +6,12 @@
 .bar-wrapper {
   overflow: hidden;
 }
+/* Make labels markers visible */
+.bar-wrapper.with-markers {
+  padding-right: 3em;
+  margin-right: -3em;
+}
+
 /* Bar container - this guy is a real parent of a bar's parts - they all are positioned relative to him */
 .bar-container {
   position: relative;
