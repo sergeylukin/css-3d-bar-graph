@@ -52,11 +52,6 @@ body::before{
       font-size: .85em;
     }
     body::before{ content: "min-width: 768px"; }
-    
-    .social-buttons {
-      display: block;
-    }
-
 }
 /* Tablet - Landscape */
 @media only screen and (min-width: 992px) {
@@ -65,18 +60,8 @@ body::before{
     }
     body::before{ content: "min-width: 992px"; }
 
-    /* Position UI Elements */
-    .demo-window {
-      display: inline-block;
-      float: left;
-      margin: 0 2em 0 0;
-    }
-    .source-container {
-      float: left;
-      display: inline-block;
-    }
-    .source-window {
-      max-width: 38em;
+    .social-buttons {
+      display: block;
     }
 }
 
