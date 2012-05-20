@@ -5,6 +5,7 @@
 /* Bar wrapper - hides the inner bar when it goes below the bar, required */
 .bar-wrapper {
   overflow: hidden;
+  display: inline-block;
 }
 /* Make.markers markers visible */
 .bar-wrapper.with-markers {

@@ -37,17 +37,19 @@
 	<h1>Pure CSS 3D Bar Graph</h1>
 
   <div class="demo-container">
-    <input type="radio" name="fill" id="empty" /><label for="empty">Empty</label>
-    <input type="radio" name="fill" id="f25" /><label for="f25">Fill 25%</label>
-    <input type="radio" name="fill" id="f50" checked="checked" /><label for="f50">Fill 50%</label>
-    <input type="radio" name="fill" id="f75" /><label for="f75">Fill 75%</label>
-    <input type="radio" name="fill" id="full" /><label for="full">Fill Full</label>
 
-    <br />
 
-    <div class="demo-set cf">
-      <div class="demo-window">
-        <span class="sticker">Result</span>
+    <div class="demo-window">
+
+      <span class="sticker">Result</span>
+
+      <input type="radio" name="fill" id="empty" /><label for="empty">Empty</label>
+      <input type="radio" name="fill" id="f25" /><label for="f25">Fill 25%</label>
+      <input type="radio" name="fill" id="f50" checked="checked" /><label for="f50">Fill 50%</label>
+      <input type="radio" name="fill" id="f75" /><label for="f75">Fill 75%</label>
+      <input type="radio" name="fill" id="full" /><label for="full">Fill Full</label>
+
+      <div style="margin-top: 1.5em;">
         <div class="bar-wrapper with-markers">
           <div class="bar-container">
             <div class="bar-background"></div>
@@ -61,353 +63,353 @@
         </div>
       </div>
 
-      <div class="source-container">
-        <div class="source-window">
-          <span class="sticker">HTML Source</span>
-          <pre class="brush:xml">
-          &lt;div class=&quot;bar-wrapper with-markers&quot;&gt;
-            &lt;div class=&quot;bar-container&quot;&gt;
-              &lt;div class=&quot;bar-background&quot;&gt;&lt;/div&gt;
-              &lt;div class=&quot;bar-inner&quot;&gt;&lt;/div&gt;
-              &lt;div class=&quot;bar-foreground&quot;&gt;
-                &lt;div class=&quot;marker p25&quot;&gt;&lt;span&gt;25%&lt;/span&gt;&lt;/div&gt;
-                &lt;div class=&quot;marker p50&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/div&gt;
-                &lt;div class=&quot;marker p75&quot;&gt;&lt;span&gt;75%&lt;/span&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          </pre>
-        </div>
-
-        <div class="source-window">
-          <span class="sticker">CSS Source</span>
-          <pre class="brush:css">
-          /*********************
-           * Graph Bars styles *
-           *********************/
-
-          /* Bar wrapper - hides the inner bar
-             when it goes below the bar, required */
-          .bar-wrapper {
-            overflow: hidden;
-          }
-          /* Make markers visible */
-          .bar-wrapper.with-markers {
-            padding-right: 3em;
-            margin-right: -3em;
-          }
-
-          /* Bar container */
-          .bar-container {
-            position: relative;
-            /* should be at least equal
-               to the top offset of
-               background casing */
-            /* because back casing is
-               positioned higher than
-               actual bar */
-            margin-top: 2.5em;
-            /* required, we have to define
-               the width of a bar */
-            width: 12.5em;
-            /* Bars size */
-            font-size: 1em;
-            /* Bars height */
-            height: 20em;
-          }
-          /* right bottom patch - make sure
-             inner bar's right bottom corner
-             is "cut" when it slides down */
-          .bar-container:before {
-            content: "";
-            position: absolute;
-            z-index: 3; /* to be above .bar-inner */
-
-            bottom: 0;
-            left: 0;
-
-            /* Use bottom border to shape triangle */
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 2.5em 2.5em 0;
-            border-color: transparent transparent #fff;
-          }
-
-          /** BACK CASING **/
-          /* Back panel */
-          .bar-background {
-            width: 10em;
-            height: 100%;
-            position: absolute;
-            top: -2.5em;
-            left: 0;
-            z-index: 1; /* just for reference */
-            background-color: rgba(160, 160, 160, .1);
-          }
-
-          .bar-background:before,
-          .bar-background:after {
-            content: "";
-            position: absolute;
-          }
-
-          /* Bottom panel */
-          .bar-background:before {
-            bottom: -2.5em;
-            left: 1.25em;
-            width: 10em;
-            height: 2.5em;
-
-            background-color: rgba(160, 160, 160, .2);
-
-            -webkit-transform: skew(45deg);
-            -moz-transform: skew(45deg);
-            -o-transform: skew(45deg);
-            -ms-transform: skew(45deg);
-            transform: skew(45deg);
-          }
-
-          /* Left back panel */
-          .bar-background:after {
-            top: 1.25em;
-            left: 100%;
-            width: 2.5em;
-            height: 100%;
-
-            background-color: rgba(160, 160, 160, .05);
-
-            /* skew only the Y-axis */
-            -webkit-transform: skew(0deg, 45deg);
-            -moz-transform: skew(0deg, 45deg);
-            -o-transform: skew(0deg, 45deg);
-            -ms-transform: skew(0deg, 45deg);
-            transform: skew(0deg, 45deg);
-          }
-
-          /** FRONT CASING **/
-          /* Front panel */
-          .bar-foreground {
-              /* be above .bar-background and .bar-inner */
-              z-index: 3;
-              background-color: #a0a0a0;
-              background-color: rgba(160, 160, 160, .1);
-          }
-          .bar-foreground,
-          .bar-inner {
-            position: absolute;
-            width: 10em;
-            height: 100%;
-            top: 0;
-            right: 0;
-          }
-
-          .bar-foreground:before,
-          .bar-foreground:after,
-          .bar-inner:before,
-          .bar-inner:after {
-            content: "";
-            position: absolute;
-          }
-
-          /* Right front panel */
-          .bar-foreground:before,
-          .bar-inner:before {
-            top: -1.25em;
-            left: -2.5em;
-            width: 2.5em;
-            height: 100%;
-            background-color: rgba(160, 160, 160, .27);
-
-            -webkit-transform: skew(0deg, 45deg);
-            -moz-transform: skew(0deg, 45deg);
-            -o-transform: skew(0deg, 45deg);
-            -ms-transform: skew(0deg, 45deg);
-            transform: skew(0deg, 45deg);
-          }
-
-          /* Top front panel */
-          .bar-foreground:after,
-          .bar-inner:after {
-            top: -2.5em;
-            left: -1.25em;
-            width: 100%;
-            height: 2.5em;
-            background-color: rgba(160, 160, 160, .2);
-
-            -webkit-transform: skew(45deg);
-            -moz-transform: skew(45deg);
-            -o-transform: skew(45deg);
-            -ms-transform: skew(45deg);
-            transform: skew(45deg);
-          }
-
-          /** BAR's inner block **/
-          .bar-inner {
-            z-index: 2; /* to be above .bar-background */
-            top: auto; /* reset position top */
-            
-            background-color: #053e7b;
-            background-color: rgba(5, 62, 123, .7);
-
-            height: 0;
-            bottom: -2.5em;
-            color: transparent; /* hide text values */
-
-            -webkit-transition: height 1s linear, bottom 1s linear;
-            -moz-transition: height 1s linear, bottom 1s linear;
-            -o-transition: height 1s linear, bottom 1s linear;
-            -ms-transition: height 1s linear, bottom 1s linear;
-            transition: height 1s linear, bottom 1s linear;
-          }
-          /* Front & Side panels*/
-          .bar-inner,
-          .bar-inner:before {
-            background-color: rgba(5, 62, 123, .7);
-          }
-          /* Top panel */
-          .bar-inner:after {
-            background-color: rgba(5, 62, 123, .6);
-          }
-
-          /** TICKS LABELS **/
-          .bar-foreground .marker {
-            position: absolute;
-            line-height: .2em;
-            font-size: .7em;
-            font-weight: normal;
-            width: 100%;
-            left: 0;
-            color: #5a5a5a;
-          }
-
-          .bar-foreground .marker:before,
-          .bar-foreground .marker:after {
-            content: "";
-            position: absolute;
-            border-style: none none dotted;
-            border-color: rgba(177, 177, 177, .4);
-            border-width: 0 0 .15em;
-            background: rgba(221, 221, 221, .3);
-          }
-
-          /* Front tick line */
-          .bar-foreground .marker:before {
-            width: 100%;
-            bottom: -.1em;
-            left: 0;
-          }
-
-          /* Side tick line */
-          .bar-foreground .marker:after {
-            width: 35%;
-            bottom: 1.75em;
-            left: -4.3em;
-            z-index: 2;
-
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-          }
-
-          .bar-foreground .marker span {
-            position: absolute;
-            left: 103%;
-            top: -.1em;
-          }
-
-
-          /* Position the lines */
-          .p25 {
-            bottom: 25%;
-          }
-
-          .p50 {
-            bottom: 50%;
-          }
-
-          .p75 {
-            bottom: 75%;
-          }
-
-          /****************
-           *    Colors    *
-           ****************/
-          /* Bar patch color - should as bar's background */
-          .bar-container:before {
-            border-color: transparent transparent #164b7f;
-          }
-
-          /* Back panel */
-          .bar-background {
-            background-color: rgba(160, 160, 160, .1);
-          }
-          /* Bottom panel */
-          .bar-background:before {
-            background-color: rgba(160, 160, 160, .2);
-          }
-          /* Back Side panel */
-          .bar-background:after {
-            background-color: rgba(160, 160, 160, .05);
-          }
-          /* Front panel */
-          .bar-foreground {
-            background-color: rgba(160, 160, 160, .1);
-          }
-          /* Front Side panel */
-          .bar-foreground:before {
-            background-color: rgba(160, 160, 160, .27);
-          }
-
-          /* Inner Side panel */
-          .bar-inner,
-          .bar-inner:before {
-            background-color: #053e7b;
-            background-color: rgba(133, 165, 204, .3);
-          }
-          /* Inner Top panel */
-          .bar-inner:after {
-            background-color: rgba(133, 165, 204, .2);
-          }
-
-          /* Bar Labels colors */
-          .bar-foreground .marker {
-            color: #ccc;
-          }
-          .bar-foreground .marker:before,
-          .bar-foreground .marker:after {
-            border-color: rgba(177, 177, 177, .4);
-            background: rgba(221, 221, 221, .3);
-          }
-
-          /****************
-           *    Sizes     *
-           ****************/
-          .bar-container {
-            /* The normal size of a bar*/
-            font-size: 12px;
-            /* Bars height */
-            height: 20em;
-          }
-
-           /* Make markers visible */
-          .bar-wrapper.with-markers {
-            padding-right: 4em;
-            margin-right: -4em;
-          }
-          .bar-wrapper.with-markers.rtl {
-            padding-left: 4em;
-            margin-left: -4em; 
-          }
-
-          </pre>
-        </div>
-      </div><!-- Source Container -->
     </div>
 
-  </div>
+    <div class="source-window">
+      <span class="sticker">HTML Source</span>
+      <pre class="brush:xml">
+      &lt;div class=&quot;bar-wrapper with-markers&quot;&gt;
+        &lt;div class=&quot;bar-container&quot;&gt;
+          &lt;div class=&quot;bar-background&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;bar-inner&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;bar-foreground&quot;&gt;
+            &lt;div class=&quot;marker p25&quot;&gt;&lt;span&gt;25%&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;marker p50&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;marker p75&quot;&gt;&lt;span&gt;75%&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="source-window">
+      <span class="sticker">CSS Source</span>
+      <pre class="brush:css">
+      /*********************
+       * Graph Bars styles *
+       *********************/
+
+      /* Bar wrapper - hides the inner bar
+         when it goes below the bar, required */
+      .bar-wrapper {
+        overflow: hidden;
+      }
+      /* Make markers visible */
+      .bar-wrapper.with-markers {
+        padding-right: 3em;
+        margin-right: -3em;
+      }
+
+      /* Bar container */
+      .bar-container {
+        position: relative;
+        /* should be at least equal
+           to the top offset of
+           background casing */
+        /* because back casing is
+           positioned higher than
+           actual bar */
+        margin-top: 2.5em;
+        /* required, we have to define
+           the width of a bar */
+        width: 12.5em;
+        /* Bars size */
+        font-size: 1em;
+        /* Bars height */
+        height: 20em;
+      }
+      /* right bottom patch - make sure
+         inner bar's right bottom corner
+         is "cut" when it slides down */
+      .bar-container:before {
+        content: "";
+        position: absolute;
+        z-index: 3; /* to be above .bar-inner */
+
+        bottom: 0;
+        left: 0;
+
+        /* Use bottom border to shape triangle */
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 2.5em 2.5em 0;
+        border-color: transparent transparent #fff;
+      }
+
+      /** BACK CASING **/
+      /* Back panel */
+      .bar-background {
+        width: 10em;
+        height: 100%;
+        position: absolute;
+        top: -2.5em;
+        left: 0;
+        z-index: 1; /* just for reference */
+        background-color: rgba(160, 160, 160, .1);
+      }
+
+      .bar-background:before,
+      .bar-background:after {
+        content: "";
+        position: absolute;
+      }
+
+      /* Bottom panel */
+      .bar-background:before {
+        bottom: -2.5em;
+        left: 1.25em;
+        width: 10em;
+        height: 2.5em;
+
+        background-color: rgba(160, 160, 160, .2);
+
+        -webkit-transform: skew(45deg);
+        -moz-transform: skew(45deg);
+        -o-transform: skew(45deg);
+        -ms-transform: skew(45deg);
+        transform: skew(45deg);
+      }
+
+      /* Left back panel */
+      .bar-background:after {
+        top: 1.25em;
+        left: 100%;
+        width: 2.5em;
+        height: 100%;
+
+        background-color: rgba(160, 160, 160, .05);
+
+        /* skew only the Y-axis */
+        -webkit-transform: skew(0deg, 45deg);
+        -moz-transform: skew(0deg, 45deg);
+        -o-transform: skew(0deg, 45deg);
+        -ms-transform: skew(0deg, 45deg);
+        transform: skew(0deg, 45deg);
+      }
+
+      /** FRONT CASING **/
+      /* Front panel */
+      .bar-foreground {
+          /* be above .bar-background and .bar-inner */
+          z-index: 3;
+          background-color: #a0a0a0;
+          background-color: rgba(160, 160, 160, .1);
+      }
+      .bar-foreground,
+      .bar-inner {
+        position: absolute;
+        width: 10em;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
+
+      .bar-foreground:before,
+      .bar-foreground:after,
+      .bar-inner:before,
+      .bar-inner:after {
+        content: "";
+        position: absolute;
+      }
+
+      /* Right front panel */
+      .bar-foreground:before,
+      .bar-inner:before {
+        top: -1.25em;
+        left: -2.5em;
+        width: 2.5em;
+        height: 100%;
+        background-color: rgba(160, 160, 160, .27);
+
+        -webkit-transform: skew(0deg, 45deg);
+        -moz-transform: skew(0deg, 45deg);
+        -o-transform: skew(0deg, 45deg);
+        -ms-transform: skew(0deg, 45deg);
+        transform: skew(0deg, 45deg);
+      }
+
+      /* Top front panel */
+      .bar-foreground:after,
+      .bar-inner:after {
+        top: -2.5em;
+        left: -1.25em;
+        width: 100%;
+        height: 2.5em;
+        background-color: rgba(160, 160, 160, .2);
+
+        -webkit-transform: skew(45deg);
+        -moz-transform: skew(45deg);
+        -o-transform: skew(45deg);
+        -ms-transform: skew(45deg);
+        transform: skew(45deg);
+      }
+
+      /** BAR's inner block **/
+      .bar-inner {
+        z-index: 2; /* to be above .bar-background */
+        top: auto; /* reset position top */
+        
+        background-color: #053e7b;
+        background-color: rgba(5, 62, 123, .7);
+
+        height: 0;
+        bottom: -2.5em;
+        color: transparent; /* hide text values */
+
+        -webkit-transition: height 1s linear, bottom 1s linear;
+        -moz-transition: height 1s linear, bottom 1s linear;
+        -o-transition: height 1s linear, bottom 1s linear;
+        -ms-transition: height 1s linear, bottom 1s linear;
+        transition: height 1s linear, bottom 1s linear;
+      }
+      /* Front & Side panels*/
+      .bar-inner,
+      .bar-inner:before {
+        background-color: rgba(5, 62, 123, .7);
+      }
+      /* Top panel */
+      .bar-inner:after {
+        background-color: rgba(5, 62, 123, .6);
+      }
+
+      /** TICKS LABELS **/
+      .bar-foreground .marker {
+        position: absolute;
+        line-height: .2em;
+        font-size: .7em;
+        font-weight: normal;
+        width: 100%;
+        left: 0;
+        color: #5a5a5a;
+      }
+
+      .bar-foreground .marker:before,
+      .bar-foreground .marker:after {
+        content: "";
+        position: absolute;
+        border-style: none none dotted;
+        border-color: rgba(177, 177, 177, .4);
+        border-width: 0 0 .15em;
+        background: rgba(221, 221, 221, .3);
+      }
+
+      /* Front tick line */
+      .bar-foreground .marker:before {
+        width: 100%;
+        bottom: -.1em;
+        left: 0;
+      }
+
+      /* Side tick line */
+      .bar-foreground .marker:after {
+        width: 35%;
+        bottom: 1.75em;
+        left: -4.3em;
+        z-index: 2;
+
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      .bar-foreground .marker span {
+        position: absolute;
+        left: 103%;
+        top: -.1em;
+      }
+
+
+      /* Position the lines */
+      .p25 {
+        bottom: 25%;
+      }
+
+      .p50 {
+        bottom: 50%;
+      }
+
+      .p75 {
+        bottom: 75%;
+      }
+
+      /****************
+       *    Colors    *
+       ****************/
+      /* Bar patch color - should as bar's background */
+      .bar-container:before {
+        border-color: transparent transparent #164b7f;
+      }
+
+      /* Back panel */
+      .bar-background {
+        background-color: rgba(160, 160, 160, .1);
+      }
+      /* Bottom panel */
+      .bar-background:before {
+        background-color: rgba(160, 160, 160, .2);
+      }
+      /* Back Side panel */
+      .bar-background:after {
+        background-color: rgba(160, 160, 160, .05);
+      }
+      /* Front panel */
+      .bar-foreground {
+        background-color: rgba(160, 160, 160, .1);
+      }
+      /* Front Side panel */
+      .bar-foreground:before {
+        background-color: rgba(160, 160, 160, .27);
+      }
+
+      /* Inner Side panel */
+      .bar-inner,
+      .bar-inner:before {
+        background-color: #053e7b;
+        background-color: rgba(133, 165, 204, .3);
+      }
+      /* Inner Top panel */
+      .bar-inner:after {
+        background-color: rgba(133, 165, 204, .2);
+      }
+
+      /* Bar Labels colors */
+      .bar-foreground .marker {
+        color: #ccc;
+      }
+      .bar-foreground .marker:before,
+      .bar-foreground .marker:after {
+        border-color: rgba(177, 177, 177, .4);
+        background: rgba(221, 221, 221, .3);
+      }
+
+      /****************
+       *    Sizes     *
+       ****************/
+      .bar-container {
+        /* The normal size of a bar*/
+        font-size: 12px;
+        /* Bars height */
+        height: 20em;
+      }
+
+       /* Make markers visible */
+      .bar-wrapper.with-markers {
+        padding-right: 4em;
+        margin-right: -4em;
+      }
+      .bar-wrapper.with-markers.rtl {
+        padding-left: 4em;
+        margin-left: -4em; 
+      }
+
+      </pre>
+    </div>
+
+
+  </div> <!-- .demo-container -->
 
 
   <div class="social-buttons">

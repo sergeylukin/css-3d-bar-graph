@@ -26,7 +26,7 @@ body {
   background-repeat: repeat;
   background-attachment: scroll;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzVDRDQwMTlGRDcxMTFFMDg3M0VCOUIxMTMxMUYyMTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzVDRDQwMUFGRDcxMTFFMDg3M0VCOUIxMTMxMUYyMTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NUNENDAxN0ZENzExMUUwODczRUI5QjExMzExRjIxMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NUNENDAxOEZENzExMUUwODczRUI5QjExMzExRjIxMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhhM2dUAAAA+SURBVHjaYvj//78UEDMQwFJwBj5FIBpDAJsidIXoilE0MoJVowIpKP0MWZCJgVhArNUke4ao4CEqwAECDAD1ovSxzBb1FAAAAABJRU5ErkJggg%3D%3D);
-  
+
 }
 h1 {
   font-family: 'Oswald', sans-serif;
@@ -41,41 +41,28 @@ h1 {
   color: red;
 }
 
+/* Hide radio buttons by default */
 input[name="fill"] {
   display:none;
 }
+/* Style labels */
 input[name="fill"] + label {
-  color: #1E243F;
-  font-weight: bold;
-  text-decoration: none;
+  color: #1f4a74;
+  font: bold .8em Arial, sans-serif;
   white-space: nowrap;
-  display: inline;
-  width: 5em;
   background: rgba(204, 204, 204, .5);
-  padding: .7em;
-  margin: .1em;
-
-  line-height: 3em;
-
+  padding: .4em .7em;
+  margin: .2em;
   cursor: pointer;
-
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  border-radius: 2em;
-  text-align: center;
-  color: #393939;
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
 }
+/* Style selected label */
 input[name="fill"]:checked + label {
   background-color: #082643;
   color: #ccc;
 }
-
-/* Make bar interactive */
-input#full:checked ~ .demo-set .bar-inner { height: 100%; bottom: 0; }
-input#f75:checked ~ .demo-set .bar-inner { height: 75%; bottom: 0; }
-input#f50:checked ~ .demo-set .bar-inner { height: 50%; bottom: 0; }
-input#f25:checked ~ .demo-set .bar-inner { height: 25%; bottom: 0; }
-input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
 
 /*------------------------------------*\
  *  Resize me image
@@ -88,11 +75,6 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
   margin: 0px;
 }
 
-#resize,
-#github {
-  display: none;
-}
-
 /*------------------------------------*\
  *  Social buttons (like Tweet, G+ etc.)
 \*------------------------------------*/
@@ -100,7 +82,13 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
   position: absolute;
   top: 1.4em;
   left: 1.6em;
-  display: none; /* hide for small devices */
+}
+
+/* Hide Social buttons, Resize and Github ribbons for small screens*/
+#resize,
+#github,
+.social-buttons {
+  display: none;
 }
 
 
@@ -111,20 +99,19 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
 .demo-container {
   margin-top: 2em;
 }
-/* Container of Windows */
-.demo-set {
-  
-  margin-top: 2em;
+/* Window for source code */
+.source-window {
+  text-align: left;
+
 }
-/* A window */
-.demo-window {
-  margin: 0 0 2em;
-  display: inline-block;
-}
+/* Widnows for demo & source code */
 .demo-window,
 .source-window {
+  margin: 0 0 2em;
   position: relative;/* required for .sticker to be positioned correctly */
-  padding: 2em;
+  width: auto;
+  padding: 2em 2em 1em 2em;
+  max-width: 40em; /* Specify the maximum width for windows */
   background-color: #164b7f;
   border: 1px solid #696D72;
   border-color: rgba(0, 0, 0, 0.2);
@@ -146,24 +133,6 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
   -moz-border-radius: 4px 0;
   border-radius: 4px 0;
 }
-/* Window with source code */
-.source-window {
-  margin-bottom: 2em;
-  text-align: left;
-
-  width: 70%;
-  overflow:hidden;
-  display: inline-block;
-}
-
-.source-container {
-  width: 75%;
-  display: inline-block;
-}
-
-
-
-
 
 
 
@@ -176,17 +145,17 @@ input#empty:checked ~ .demo-set .bar-inner { height: 0; bottom: -2.5em; }
 
 /* Clearfix */
 /* For modern browsers */
-.cf:before,
-.cf:after {
+.clearfix:before,
+.clearfix:after {
     content:"";
     display:table;
 }
 
-.cf:after {
+.clearfix:after {
     clear:both;
 }
 
 /* For IE 6/7 (trigger hasLayout) */
-.cf {
+.clearfix {
     *zoom:1;
 }

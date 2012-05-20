@@ -1,3 +1,12 @@
+/* For smooth responsive resizing */
+body {
+  transition:all .2s linear; 
+  -o-transition:all .2s linear; 
+  -moz-transition:all .2s linear; 
+  -webkit-transition:all .2s linear;
+}
+
+/* For Responsive debugging - toggle display property value to show/hide */
 body::before{
   content: "Before 480px";
     font-weight: bold;
@@ -11,9 +20,6 @@ body::before{
     z-index: 99;
 }
 
-.bar-wrapper {
-  display: inline-block;
-}
 
 /*------------------------------------*\
  *  Responsive queries
@@ -24,22 +30,13 @@ body::before{
       font-size: .7em;
     }
     body::before{ content: "min-width: 480px"; }
-    input[name="fill"] + label {
-      margin: .2em;
-    }
 
-    .demo-set {
+    /* Position container in center */
+    .demo-container {
       display: inline-block;
     }
-    .demo-window,
-    .source-window {
-      display: block;
-    }
-    .source-container,
-    .source-window {
-      width: auto;
-    }
-
+    
+    /* Show GitHub ribbon */
     #github {
       display: block;
     }
@@ -60,6 +57,7 @@ body::before{
     }
     body::before{ content: "min-width: 992px"; }
 
+    /* Show Social buttons */
     .social-buttons {
       display: block;
     }

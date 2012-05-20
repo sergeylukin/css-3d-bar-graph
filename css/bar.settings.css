@@ -62,3 +62,11 @@
   /* Bars height */
   height: 20em;
 }
+
+
+/* Make bar interactive */
+input#full:checked ~ div .bar-inner { height: 100%; bottom: 0; }
+input#f75:checked ~ div .bar-inner { height: 75%; bottom: 0; }
+input#f50:checked ~ div .bar-inner { height: 50%; bottom: 0; }
+input#f25:checked ~ div .bar-inner { height: 25%; bottom: 0; }
+input#empty:checked ~ div .bar-inner { height: 0; bottom: -2.5em; }
