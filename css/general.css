@@ -53,6 +53,7 @@ input[name="fill"] + label {
   background: rgba(204, 204, 204, .5);
   padding: .4em .7em;
   margin: .2em;
+  line-height: 2.5em;
   cursor: pointer;
   -webkit-border-radius: .5em;
   -moz-border-radius: .5em;
