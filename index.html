@@ -53,9 +53,9 @@
             <div class="bar-background"></div>
             <div class="bar-inner"></div>
             <div class="bar-foreground">
-              <div class="label p25"><span>25%</span></div>
-              <div class="label p50"><span>50%</span></div>
-              <div class="label p75"><span>75%</span></div>
+              <div class="marker p25"><span>25%</span></div>
+              <div class="marker p50"><span>50%</span></div>
+              <div class="marker p75"><span>75%</span></div>
             </div>
           </div>
         </div>
@@ -70,9 +70,9 @@
               &lt;div class=&quot;bar-background&quot;&gt;&lt;/div&gt;
               &lt;div class=&quot;bar-inner&quot;&gt;&lt;/div&gt;
               &lt;div class=&quot;bar-foreground&quot;&gt;
-                &lt;div class=&quot;label p25&quot;&gt;&lt;span&gt;25%&lt;/span&gt;&lt;/div&gt;
-                &lt;div class=&quot;label p50&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/div&gt;
-                &lt;div class=&quot;label p75&quot;&gt;&lt;span&gt;75%&lt;/span&gt;&lt;/div&gt;
+                &lt;div class=&quot;marker p25&quot;&gt;&lt;span&gt;25%&lt;/span&gt;&lt;/div&gt;
+                &lt;div class=&quot;marker p50&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/div&gt;
+                &lt;div class=&quot;marker p75&quot;&gt;&lt;span&gt;75%&lt;/span&gt;&lt;/div&gt;
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -91,7 +91,7 @@
           .bar-wrapper {
             overflow: hidden;
           }
-          /* Make labels markers visible */
+          /* Make markers visible */
           .bar-wrapper.with-markers {
             padding-right: 3em;
             margin-right: -3em;
@@ -271,7 +271,7 @@
           }
 
           /** TICKS LABELS **/
-          .bar-foreground .label {
+          .bar-foreground .marker {
             position: absolute;
             line-height: .2em;
             font-size: .7em;
@@ -281,8 +281,8 @@
             color: #5a5a5a;
           }
 
-          .bar-foreground .label:before,
-          .bar-foreground .label:after {
+          .bar-foreground .marker:before,
+          .bar-foreground .marker:after {
             content: "";
             position: absolute;
             border-style: none none dotted;
@@ -292,14 +292,14 @@
           }
 
           /* Front tick line */
-          .bar-foreground .label:before {
+          .bar-foreground .marker:before {
             width: 100%;
             bottom: -.1em;
             left: 0;
           }
 
           /* Side tick line */
-          .bar-foreground .label:after {
+          .bar-foreground .marker:after {
             width: 35%;
             bottom: 1.75em;
             left: -4.3em;
@@ -312,7 +312,7 @@
             transform: rotate(45deg);
           }
 
-          .bar-foreground .label span {
+          .bar-foreground .marker span {
             position: absolute;
             left: 103%;
             top: -.1em;
@@ -373,11 +373,11 @@
           }
 
           /* Bar Labels colors */
-          .bar-foreground .label {
+          .bar-foreground .marker {
             color: #ccc;
           }
-          .bar-foreground .label:before,
-          .bar-foreground .label:after {
+          .bar-foreground .marker:before,
+          .bar-foreground .marker:after {
             border-color: rgba(177, 177, 177, .4);
             background: rgba(221, 221, 221, .3);
           }
@@ -392,7 +392,7 @@
             height: 20em;
           }
 
-           /* Make labels markers visible */
+           /* Make markers visible */
           .bar-wrapper.with-markers {
             padding-right: 4em;
             margin-right: -4em;

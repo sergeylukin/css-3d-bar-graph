@@ -1,6 +1,6 @@
 /** Styles for horizontally flipped bar **/
 
- /* Make labels markers visible */
+ /* Make.markers markers visible */
 .bar-wrapper.with-markers.rtl {
   padding-left: 3em;
   margin-left: -3em; 
@@ -81,7 +81,7 @@
           transform: skew(-45deg);
 }
 /* Side tick line */
-.bar-wrapper.rtl .label:after {
+.bar-wrapper.rtl .marker:after {
   left: auto;
   right: -4.3em;
 
@@ -91,6 +91,6 @@
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.bar-wrapper.rtl .label span {
+.bar-wrapper.rtl .marker span {
   left: -2.5em;
 }

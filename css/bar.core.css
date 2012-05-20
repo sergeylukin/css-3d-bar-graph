@@ -6,7 +6,7 @@
 .bar-wrapper {
   overflow: hidden;
 }
-/* Make labels markers visible */
+/* Make.markers markers visible */
 .bar-wrapper.with-markers {
   padding-right: 3em;
   margin-right: -3em;
@@ -176,7 +176,7 @@
 }
 
 /** TICKS LABELS **/
-.bar-foreground .label {
+.bar-foreground .marker {
   position: absolute;
   line-height: .2em;
   font-size: .7em;
@@ -186,8 +186,8 @@
   color: #5a5a5a;
 }
 
-.bar-foreground .label:before,
-.bar-foreground .label:after {
+.bar-foreground .marker:before,
+.bar-foreground .marker:after {
   content: "";
   position: absolute;
   border-style: none none dotted;
@@ -197,14 +197,14 @@
 }
 
 /* Front tick line */
-.bar-foreground .label:before {
+.bar-foreground .marker:before {
   width: 100%;
   bottom: -.1em;
   left: 0;
 }
 
 /* Side tick line */
-.bar-foreground .label:after {
+.bar-foreground .marker:after {
   width: 35%;
   bottom: 1.75em;
   left: -4.3em;
@@ -217,7 +217,7 @@
   transform: rotate(45deg);
 }
 
-.bar-foreground .label span {
+.bar-foreground .marker span {
   position: absolute;
   left: 103%;
   top: -.1em;

@@ -44,11 +44,11 @@
 }
 
 /* Bar Labels colors */
-.bar-foreground .label {
+.bar-foreground .marker {
   color: #ccc;
 }
-.bar-foreground .label:before,
-.bar-foreground .label:after {
+.bar-foreground .marker:before,
+.bar-foreground .marker:after {
   border-color: rgba(177, 177, 177, .4);
   background: rgba(221, 221, 221, .3);
 }

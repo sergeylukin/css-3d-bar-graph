@@ -7,9 +7,9 @@
 .bar-inner:before {
   background-color: transparent;
 }
-.bar-foreground .label span {
+.bar-foreground .marker span {
   line-height: .7em;
 }
-.bar-foreground .label:after {
+.bar-foreground .marker:after {
   display: none;
 }
