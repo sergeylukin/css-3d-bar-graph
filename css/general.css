@@ -10,7 +10,7 @@ html {
   background: -ms-radial-gradient(circle, #1865B1, #0A4277);
   background: -o-radial-gradient(circle, #1865B1, #0A4277);
   background: radial-gradient(circle, #1865B1, #0A4277);
-
+  background-attachment: fixed;
 }
 body {
   font: normal .65em sans-serif;
