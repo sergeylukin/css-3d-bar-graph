@@ -3,14 +3,7 @@
 \*------------------------------------*/
 html {
   height: 100%;
-  background-color: #1865B1;
-  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1865B1), to(#0A4277));
-  background: -webkit-radial-gradient(circle, #1865B1, #0A4277);
-  background: -moz-radial-gradient(circle, #1865B1, #0A4277);
-  background: -ms-radial-gradient(circle, #1865B1, #0A4277);
-  background: -o-radial-gradient(circle, #1865B1, #0A4277);
-  background: radial-gradient(circle, #1865B1, #0A4277);
-  background-attachment: fixed;
+  background-color: #0D4D8D;
 }
 body {
   font: normal .65em sans-serif;
