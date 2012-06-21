@@ -23,4 +23,6 @@ Screenshot
 
 ![tabs](https://raw.github.com/sergeylukin/css-3d-bar-graph/master/img/screen-bar-graph.jpg)
 
+My tutorial about this project was published on Codrops: http://tympanus.net/codrops/2012/05/21/animated-3d-bar-chart-with-css3/
+
 Inspired by http://net.tutsplus.com/tutorials/javascript-ajax/create-an-animated-3d-bar-chartgraph/
